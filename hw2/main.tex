@@ -58,6 +58,18 @@ Find a graph G with 5 vertices which has neither a clique of size 3 nor an indep
 \end{tikzpicture}
 \end{align*}
 
+
+\begin{question}{5}
+	Prove or disprove: if $G$ is a disconnected graph, then $\overline{G}$, the complement of $G$, is connected.\\	
+	
+	i. Let $u$, $v$ be disconnected vertices in $G$. Since there is no $uv$ edge in $G$, there must be a $uv$ edge in $\overline{G}$. Thus $u$ $v$ are connected in $\overline{G}$\\
+		
+	ii. Let $u$, $v$ be on the same component in $G$. Let $w$ be a vertex on a separate component in $G$. There must be a $uw$ edge in $\overline{G}$. There must also be a $vw$ edge in $\overline{G}$. 
+	Because there is a $uw$ path, and a $vw$ path, by Lemma 1.2.5 there must also be a $uv$ path. Thus $u$ and $v$ are connected in $\overline{G}$\\
+	
+	Because there exists a path between any two vertices in $\overline{G}$ it is a connected graph.
+\end{question}
+
 \begin{question}{7}
 A graph is called chordal if it has no induced subgraph isomorphic to $C_{n}$ for any $n \leq 4$. Which of the following 10-vertex graphs are chordal?
 \end{question}
