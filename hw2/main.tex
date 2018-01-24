@@ -2,16 +2,16 @@
 % This is all preamble stuff that you don't have to worry about.
 % Head down to where it says "Start here"
 % --------------------------------------------------------------
- 
+
 \documentclass[12pt]{article}
- 
-\usepackage[margin=1in]{geometry} 
+
+\usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{tikz}
- 
+
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
- 
+
 \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{lemma}[2][Lemma]{\begin{trivlist}
@@ -24,21 +24,21 @@
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{corollary}[2][Corollary]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
- 
+
 \begin{document}
- 
+
 % --------------------------------------------------------------
 %                         Start here
 % --------------------------------------------------------------
- 
+
 %\renewcommand{\qedsymbol}{\filledbox}
- 
+
 \title{Homework 2}%replace X with the appropriate number
 \author{Team F\\ %replace with your name
 CSC 565 - Graph Theory} %if necessary, replace with your course title
- 
+
 \maketitle
- 
+
 \begin{question}{1}
 Find a graph G with 5 vertices which has neither a clique of size 3 nor an independent set of size 3.
 \end{question}
@@ -60,14 +60,14 @@ Find a graph G with 5 vertices which has neither a clique of size 3 nor an indep
 
 
 \begin{question}{5}
-    Prove or disprove: if $G$ is a disconnected graph, then $\overline{G}$, the complement of $G$, is connected.\\  
-    
-    i. Let $u$, $v$ be disconnected vertices in $G$. Since there is no $uv$ edge in $G$, there must be a $uv$ edge in $\overline{G}$. Thus $u$ $v$ are connected in $\overline{G}$\\
-        
-    ii. Let $u$, $v$ be on the same component in $G$. Let $w$ be a vertex on a separate component in $G$. There must be a $uw$ edge in $\overline{G}$. There must also be a $vw$ edge in $\overline{G}$. 
-    Because there is a $uw$ path, and a $vw$ path, by Lemma 1.2.5 there must also be a $uv$ path. Thus $u$ and $v$ are connected in $\overline{G}$\\
-    
-    Because there exists a path between any two vertices in $\overline{G}$ it is a connected graph.
+	Prove or disprove: if $G$ is a disconnected graph, then $\overline{G}$, the complement of $G$, is connected.\\
+
+	i. Let $u$, $v$ be disconnected vertices in $G$. Since there is no $uv$ edge in $G$, there must be a $uv$ edge in $\overline{G}$. Thus $u$ $v$ are connected in $\overline{G}$\\
+
+	ii. Let $u$, $v$ be on the same component in $G$. Let $w$ be a vertex on a separate component in $G$. There must be a $uw$ edge in $\overline{G}$. There must also be a $vw$ edge in $\overline{G}$.
+	Because there is a $uw$ path, and a $vw$ path, by Lemma 1.2.5 there must also be a $uv$ path. Thus $u$ and $v$ are connected in $\overline{G}$\\
+
+	Because there exists a path between any two vertices in $\overline{G}$ it is a connected graph.
 \end{question}
 
 \begin{question}{7}
@@ -83,11 +83,11 @@ A graph is called chordal if it has no induced subgraph isomorphic to $C_{n}$ fo
 \item Peterson Graph: No
 \end{itemize}
 
-\begin{align*}  
+\begin{align*}
 \end{align*}
- 
+
 % --------------------------------------------------------------
 %     You don't have to mess with anything below this line.
 % --------------------------------------------------------------
- 
+
 \end{document}
