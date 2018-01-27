@@ -159,6 +159,90 @@ Find a graph G with 5 vertices which has neither a clique of size 3 nor an indep
 \end{tikzpicture}
 \end{align*}
 
+\begin{question}{3}
+	Determine which pairs of graphs below are bipartite.
+	
+	
+	\begin{align*}
+	\begin{tikzpicture}
+	\node[shape=circle,draw=black] (A) at (0,-3) {A};
+	\node[shape=circle,draw=black] (B) at (3,-3) {B};
+	\node[shape=circle,draw=black] (C) at (3,0) {C};
+	\node[shape=circle,draw=black] (D) at (0,0) {D};
+	\node[shape=circle,draw=black] (E) at (1,-2) {E};
+	\node[shape=circle,draw=black] (F) at (2,-2) {F};
+	\node[shape=circle,draw=black] (G) at (2,-1) {G};
+	\node[shape=circle,draw=black] (H) at (1,-1) {H};
+	\path [] (D) edge node[left] {} (A);
+	\path [] (A) edge node[left] {} (B);
+	\path [] (B) edge node[left] {} (C);
+	\path [] (C) edge node[left] {} (D);
+	\path [] (E) edge node[left] {} (F);
+	\path [] (F) edge node[left] {} (G);
+	\path [] (G) edge node[left] {} (H);
+	\path [] (H) edge node[left] {} (E);
+	\path [] (A) edge node[left] {} (E);
+	\path [] (B) edge node[left] {} (F);
+	\path [] (G) edge node[left] {} (C);
+	\path [] (D) edge node[left] {} (H);
+	\end{tikzpicture}
+	\end{align*}
+	
+	\begin{align*}
+	\begin{tikzpicture}
+	\node[shape=circle,draw=black] (S) at (0,0) {S};
+	\node[shape=circle,draw=black] (T) at (0,1) {T};
+	\node[shape=circle,draw=black] (U) at (0,2) {U};
+	\node[shape=circle,draw=black] (V) at (0,3) {V};
+	\node[shape=circle,draw=black] (W) at (2,0) {W};
+	\node[shape=circle,draw=black] (X) at (2,1) {X};
+	\node[shape=circle,draw=black] (Y) at (2,2) {Y};
+	\node[shape=circle,draw=black] (Z) at (2,3) {Z};
+	\path [] (S) edge node[left] {} (Z);
+	\path [] (S) edge node[left] {} (Y);
+	\path [] (S) edge node[left] {} (X);
+	\path [] (T) edge node[left] {} (Z);
+	\path [] (T) edge node[left] {} (Y);
+	\path [] (T) edge node[left] {} (W);
+	\path [] (U) edge node[left] {} (Z);
+	\path [] (U) edge node[left] {} (X);
+	\path [] (U) edge node[left] {} (W);
+	\path [] (V) edge node[left] {} (Y);
+	\path [] (V) edge node[left] {} (X);
+	\path [] (V) edge node[left] {} (W);
+	\end{tikzpicture}
+	\end{align*}
+	
+\end{question}
+	
+	The first and second graph are isomorphic. The first can be relabeled to look like the second:
+		\begin{align*}
+	\begin{tikzpicture}
+	\node[shape=circle,draw=black] (C) at (0,0) {C};
+	\node[shape=circle,draw=black] (A) at (0,1) {A};
+	\node[shape=circle,draw=black] (F) at (0,2) {F};
+	\node[shape=circle,draw=black] (H) at (0,3) {H};
+	\node[shape=circle,draw=black] (E) at (2,0) {E};
+	\node[shape=circle,draw=black] (G) at (2,1) {G};
+	\node[shape=circle,draw=black] (D) at (2,2) {D};
+	\node[shape=circle,draw=black] (B) at (2,3) {B};
+	\path [] (D) edge node[left] {} (A);
+	\path [] (A) edge node[left] {} (B);
+	\path [] (B) edge node[left] {} (C);
+	\path [] (C) edge node[left] {} (D);
+	\path [] (E) edge node[left] {} (F);
+	\path [] (F) edge node[left] {} (G);
+	\path [] (G) edge node[left] {} (H);
+	\path [] (H) edge node[left] {} (E);
+	\path [] (A) edge node[left] {} (E);
+	\path [] (B) edge node[left] {} (F);
+	\path [] (G) edge node[left] {} (C);
+	\path [] (D) edge node[left] {} (H);
+	\end{tikzpicture}
+	\end{align*}
+	
+	The third graph is not isomorphic, because it is not a bipartite graph like the first two graphs.	
+	
 \begin{question}{5}
 	Prove or disprove: if $G$ is a disconnected graph, then $\overline{G}$, the complement of $G$, is connected.\\	
 	
