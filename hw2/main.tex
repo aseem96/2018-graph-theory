@@ -59,12 +59,113 @@ Find a graph G with 5 vertices which has neither a clique of size 3 nor an indep
 \end{align*}
 
 
+\begin{question}{2}
+	Find all metamorphism classes of simple graphs with 5 vertices and 5 edges.
+\end{question}
+
+
+\begin{align*}
+\begin{tikzpicture}
+\node[shape=circle,draw=black] (A) at (0,0) {};
+\node[shape=circle,draw=black] (B) at (1,0) {};
+\node[shape=circle,draw=black] (C) at (0,-1) {};
+\node[shape=circle,draw=black] (D) at (1,-1) {};
+\node[shape=circle,draw=black] (E) at (2,-1) {};
+\path [] (A) edge node[left] {} (B);
+\path [] (C) edge node[left] {} (D);
+\path [] (B) edge node[left] {} (D);
+\path [] (B) edge node[left] {} (E);
+\path [] (D) edge node[left] {} (E);
+\end{tikzpicture}
+\end{align*}
+
+
+
+\begin{align*}
+\begin{tikzpicture}
+\node[shape=circle,draw=black] (A) at (0,0) {};
+\node[shape=circle,draw=black] (B) at (1,0) {};
+\node[shape=circle,draw=black] (C) at (0,-1) {};
+\node[shape=circle,draw=black] (D) at (1,-1) {};
+\node[shape=circle,draw=black] (E) at (2,-1) {};
+\path [] (A) edge node[left] {} (B);
+\path [] (C) edge node[left] {} (B);
+\path [] (B) edge node[left] {} (D);
+\path [] (B) edge node[left] {} (E);
+\path [] (D) edge node[left] {} (E);
+\end{tikzpicture}
+\end{align*}
+
+\begin{align*}
+\begin{tikzpicture}
+\node[shape=circle,draw=black] (A) at (0,0) {};
+\node[shape=circle,draw=black] (B) at (1,0) {};
+\node[shape=circle,draw=black] (C) at (0,-1) {};
+\node[shape=circle,draw=black] (D) at (1,-1) {};
+\node[shape=circle,draw=black] (E) at (2,-1) {};
+\path [] (A) edge node[left] {} (B);
+\path [] (C) edge node[left] {} (A);
+\path [] (B) edge node[left] {} (D);
+\path [] (B) edge node[left] {} (E);
+\path [] (D) edge node[left] {} (E);
+\end{tikzpicture}
+\end{align*}
+
+
+\begin{align*}
+\begin{tikzpicture}
+\node[shape=circle,draw=black] (A) at (0,0) {};
+\node[shape=circle,draw=black] (B) at (1,0) {};
+\node[shape=circle,draw=black] (C) at (0,-1) {};
+\node[shape=circle,draw=black] (D) at (1,-1) {};
+\node[shape=circle,draw=black] (E) at (2,-1) {};
+\path [] (A) edge node[left] {} (B);
+\path [] (C) edge node[left] {} (D);
+\path [] (B) edge node[left] {} (D);
+\path [] (A) edge node[left] {} (C);
+\path [] (D) edge node[left] {} (E);
+\end{tikzpicture}
+\end{align*}
+
+\begin{align*}
+\begin{tikzpicture}
+\node[shape=circle,draw=black] (A) at (0,0) {};
+\node[shape=circle,draw=black] (B) at (1,0) {};
+\node[shape=circle,draw=black] (C) at (0,-1) {};
+\node[shape=circle,draw=black] (D) at (1,-1) {};
+\node[shape=circle,draw=black] (E) at (2,-1) {};
+\path [] (A) edge node[left] {} (B);
+\path [] (B) edge node[left] {} (E);
+\path [] (D) edge node[left] {} (E);
+\path [] (A) edge node[left] {} (C);
+\path [] (D) edge node[left] {} (C);
+\end{tikzpicture}
+\end{align*}
+
+
+
+\begin{align*}
+\begin{tikzpicture}
+\node[shape=circle,draw=black] (A) at (0,0) {};
+\node[shape=circle,draw=black] (B) at (1,0) {};
+\node[shape=circle,draw=black] (C) at (0,-1) {};
+\node[shape=circle,draw=black] (D) at (1,-1) {};
+\node[shape=circle,draw=black] (E) at (2,-1) {};
+\path [] (A) edge node[left] {} (B);
+\path [] (B) edge node[left] {} (D);
+\path [] (D) edge node[left] {} (C);
+\path [] (A) edge node[left] {} (C);
+\path [] (D) edge node[left] {} (A);
+\end{tikzpicture}
+\end{align*}
+
 \begin{question}{5}
-	Prove or disprove: if $G$ is a disconnected graph, then $\overline{G}$, the complement of $G$, is connected.\\
+	Prove or disprove: if $G$ is a disconnected graph, then $\overline{G}$, the complement of $G$, is connected.\\	
+	
+	i. Let $u$, $v$ be on different components in $G$. Since there is no $uv$ edge in $G$, there must be a $uv$ edge in $\overline{G}$. Thus $u$ $v$ are connected in $\overline{G}$\\
+		
+	ii. Let $u$, $v$ be on the same component in $G$. Let $w$ be a vertex on a separate component in $G$. There must be a $uw$ edge in $\overline{G}$. There must also be a $vw$ edge in $\overline{G}$. 
 
-	i. Let $u$, $v$ be disconnected vertices in $G$. Since there is no $uv$ edge in $G$, there must be a $uv$ edge in $\overline{G}$. Thus $u$ $v$ are connected in $\overline{G}$\\
-
-	ii. Let $u$, $v$ be on the same component in $G$. Let $w$ be a vertex on a separate component in $G$. There must be a $uw$ edge in $\overline{G}$. There must also be a $vw$ edge in $\overline{G}$.
 	Because there is a $uw$ path, and a $vw$ path, by Lemma 1.2.5 there must also be a $uv$ path. Thus $u$ and $v$ are connected in $\overline{G}$\\
 
 	Because there exists a path between any two vertices in $\overline{G}$ it is a connected graph.
