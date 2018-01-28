@@ -227,3 +227,7 @@ TSWLatexianTemp*
 
 
 # End of https://www.gitignore.io/api/latex
+
+# OSX things to exclude:
+
+.DS_Store

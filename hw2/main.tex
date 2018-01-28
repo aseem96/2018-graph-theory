@@ -58,6 +58,15 @@ Find a graph G with 5 vertices which has neither a clique of size 3 nor an indep
 \end{tikzpicture}
 \end{align*}
 
+\begin{question}{4} 
+	Let $A$ be the adjacency matrix of  $K_n$. If i = j , then $A^{2}[i,j]$\_\_\_\_.  Otherwise, $A^{2}[i,j]$ =\_\_\_\_. 
+\end{question}
+
+\begin{itemize}
+\item If i = j , then $A^{2}[i,j]$ = (n-1)
+\item Otherwise,   $A^{2}[i,j]$ = (n-2)
+\end{itemize}
+
 
 \begin{question}{2}
 	Find all metamorphism classes of simple graphs with 5 vertices and 5 edges.
@@ -255,6 +264,45 @@ Find a graph G with 5 vertices which has neither a clique of size 3 nor an indep
 	Because there exists a path between any two vertices in $\overline{G}$ it is a connected graph.
 \end{question}
 
+\begin{question}{6}
+Determine whether $K_4$ contains the following (give an example or a proof of non-existence);
+\end{question}
+a) A walk that is not a trail. \\
+\begin{align*}
+\begin{tikzpicture}
+    \node[shape=circle,draw=black] (A) at (3,0) {A};
+    \node[shape=circle,draw=black] (B) at (0,0) {B};
+    \path [] (A) edge node[left] {$e_1$} (B);
+\end{tikzpicture}
+\end{align*}
+
+The walk B, $e_1$, A, $e_1$, B is a walk that is not a trail. \\ \\
+b) A trail that is not closed and is not a path. \\
+\begin{align*}
+\begin{tikzpicture}
+    \node[shape=circle,draw=black] (A) at (0,0) {A};
+    \node[shape=circle,draw=black] (B) at (1,1) {B};
+    \node[shape=circle,draw=black] (C) at (2,2) {C};
+    \node[shape=circle,draw=black] (D) at (2,0) {D};
+    \node[shape=circle,draw=black] (E) at (0,2) {E};
+    \path [] (A) edge node[left] {$e_1$} (B);
+    \path [] (B) edge node[left] {$e_2$} (C);
+    \path [] (C) edge node[left] {$e_3$} (D);
+    \path [] (D) edge node[left] {$e_4$} (B);
+    \path [] (B) edge node[left] {$e_5$} (E);
+\end{tikzpicture}
+\end{align*}
+The walk A, $e_1$, B, $e_2$, C, $e_3$, D, $e_4$, B, $e_5$, E is a trail that is not closed and is not a path, as the vertex B is repeated. \\
+
+c) A closed trail that is not a cycle. \\
+\begin{align*}
+\begin{tikzpicture}
+    \node[shape=circle,draw=black] (A) at (0,0) {A};
+\end{tikzpicture}
+\end{align*}
+
+The closed trail of A alone is a closed trail that is not a cycle. \\
+
 \begin{question}{7}
 A graph is called chordal if it has no induced subgraph isomorphic to $C_{n}$ for any $n \leq 4$. Which of the following 10-vertex graphs are chordal?
 \end{question}
@@ -270,6 +318,69 @@ A graph is called chordal if it has no induced subgraph isomorphic to $C_{n}$ fo
 
 \begin{align*}
 \end{align*}
+
+\begin{question}{8}
+a. For each graph $G$ below, find the incidence matrix $M(G)$. (See definition 1.1.17 and Example 1.1.19.)
+\begin{center}
+\includegraphics{q8.png}
+\end{center}
+\end{question}
+
+\begin{tabular}{|c|c|c|} 
+\multicolumn{3}{c}{Far Left}  \\ \hline
+ & e$_1$ & e$_2$ \\ \hline
+v$_1$ & 1 & 0 \\ \hline
+v$_2$ & 1 & 1 \\ \hline
+v$_3$ & 0 & 1 \\ \hline
+v$_4$ & 0 & 0 \\ \hline
+\end{tabular}
+
+\begin{tabular}{|c|c|c|c|c|} 
+\multicolumn{5}{c}{Middle}  \\ \hline
+ & e$_1$ & e$_2$ & e$_3$ & e$_4$ \\ \hline
+v$_1$ & 1 & 0 & 1 & 0 \\ \hline
+v$_2$ & 1 & 1 & 0 & 0 \\ \hline
+v$_3$ & 0 & 1 & 1 & 1 \\ \hline
+v$_4$ & 0 & 0 & 0 & 1\\ \hline
+\end{tabular}
+
+\begin{tabular}{|c|c|c|c|c|c|} 
+\multicolumn{6}{c}{Far Right}  \\ \hline
+ & e$_1$ & e$_2$ & e$_3$ & e$_4$ & e$_5$\\ \hline
+v$_1$ & 1 & 0 & 1 & 0 & 1 \\ \hline
+v$_2$ & 1 & 1 & 0 & 0 & 0 \\ \hline
+v$_3$ & 0 & 1 & 1 & 1 & 0 \\ \hline
+v$_4$ & 0 & 0 & 0 & 1 & 1 \\ \hline
+\end{tabular}
+
+b. Recall that the transpose of a $ p \times q$ matrix $M$ is the $ q \times p $ matrix $M^{T}$ with $ M^{T}[i,j] = M[j,i]$. For each graph $G$ above in (a), find the matrix product $M(G) \cdot (M(G))^{T}$. \\ \\
+
+\begin{tabular}{|c|c|c|c|} 
+\multicolumn{4}{c}{Far Left}  \\ \hline
+1 & 1 & 0 & 0 \\ \hline
+1 & 2 & 1 & 0 \\ \hline
+0 & 1 & 1 & 0 \\ \hline
+0 & 0 & 0 & 0\\ \hline
+\end{tabular}
+
+\begin{tabular}{|c|c|c|c|} 
+\multicolumn{4}{c}{Middle}  \\ \hline
+2 & 1 & 1 & 0 \\ \hline
+1 & 2 & 1 & 0 \\ \hline
+1 & 1 & 3 & 1 \\ \hline
+0 & 0 & 1 & 1\\ \hline
+\end{tabular}
+
+\begin{tabular}{|c|c|c|c|} 
+\multicolumn{4}{c}{Far Right}  \\ \hline
+3 & 1 & 1 & 1 \\ \hline
+1 & 2 & 1 & 0 \\ \hline
+1 & 1 & 3 & 1 \\ \hline
+1 & 0 & 1 & 2\\ \hline
+\end{tabular}
+
+
+
 
 % --------------------------------------------------------------
 %     You don't have to mess with anything below this line.
