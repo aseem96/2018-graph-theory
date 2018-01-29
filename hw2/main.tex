@@ -57,15 +57,7 @@ Find a graph G with 5 vertices which has neither a clique of size 3 nor an indep
     \path [] (E) edge node[left] {} (A);
 \end{tikzpicture}
 \end{align*}
-
-\begin{question}{4} 
-	Let $A$ be the adjacency matrix of  $K_n$. If i = j , then $A^{2}[i,j]$\_\_\_\_.  Otherwise, $A^{2}[i,j]$ =\_\_\_\_. 
-\end{question}
-
-\begin{itemize}
-\item If i = j , then $A^{2}[i,j]$ = (n-1)
-\item Otherwise,   $A^{2}[i,j]$ = (n-2)
-\end{itemize}
+C5 has a maximal clique of 2 and a maximal independent set of 2.
 
 
 \begin{question}{2}
@@ -250,8 +242,17 @@ Find a graph G with 5 vertices which has neither a clique of size 3 nor an indep
 	\end{tikzpicture}
 	\end{align*}
 	
-	The third graph is not isomorphic, because it is not a bipartite graph like the first two graphs.	
+	The third graph is not isomorphic to the first two graphs, because it is not a bipartite graph like the first two graphs (its non bipartite nature is easy discernible- it contains an odd cycle of 5, and by Theorem 1.2.18, a graph is bipartite iff it contains no odd cycles) 
 	
+\begin{question}{4} 
+	Let $A$ be the adjacency matrix of  $K_n$. If i = j , then $A^{2}[i,j]$\_\_\_\_.  Otherwise, $A^{2}[i,j]$ =\_\_\_\_. 
+\end{question}
+
+\begin{itemize}
+	\item If i = j , then $A^{2}[i,j]$ = (n-1)
+	\item Otherwise,   $A^{2}[i,j]$ = (n-2)
+\end{itemize}
+
 \begin{question}{5}
 	Prove or disprove: if $G$ is a disconnected graph, then $\overline{G}$, the complement of $G$, is connected.\\	
 	
@@ -276,7 +277,7 @@ a) A walk that is not a trail. \\
 \end{tikzpicture}
 \end{align*}
 
-The walk B, $e_1$, A, $e_1$, B is a walk that is not a trail. \\ \\
+The walk B, $e_1$, A, $e_1$, B is a walk that is not a trail; it repeats the $e1$ edge.\\ \\
 b) A trail that is not closed and is not a path. \\
 \begin{align*}
 \begin{tikzpicture}
@@ -301,23 +302,20 @@ c) A closed trail that is not a cycle. \\
 \end{tikzpicture}
 \end{align*}
 
-The closed trail of A alone is a closed trail that is not a cycle. \\
+The closed trail of A alone is a closed trail that is not a cycle. The length of the walk is 0, so it is not a cycle. $v_0 = v_n$ so it is closed. It also does not repeat any edges, therefore it is a closed trail that is not a cycle.\\
 
 \begin{question}{7}
 A graph is called chordal if it has no induced subgraph isomorphic to $C_{n}$ for any $n \leq 4$. Which of the following 10-vertex graphs are chordal?
 \end{question}
 
 \begin{itemize}
-\item $K_{10}$ \hspace{3mm}: Yes
-\item $K_{5,5}$ \hspace{2mm}: No
-\item $K_{1,9}$ \hspace{2mm}: Yes
-\item $C_{10}$ \hspace{3mm}: No
-\item $P_{10}$ \hspace{3mm}: Yes
-\item Peterson Graph: No
+\item $K_{10}$ \hspace{3mm}: Yes 
+\item $K_{5,5}$ \hspace{2mm}: No - $K_{5,5}$ contains $C_4$ as an induced subgraph
+\item $K_{1,9}$ \hspace{2mm}: Yes - $K_{1,9}$ is trivially chordal, since it does not contain any cycles
+\item $C_{10}$ \hspace{3mm}: No - $C_{10}$ contains itself as an induced subgraph
+\item $P_{10}$ \hspace{3mm}: Yes - $P_{10}$ is trivially chordal, since it does not contain any cycles
+\item Petersen Graph: No - The Petersen graph has $C_5$ as an induced subgraph
 \end{itemize}
-
-\begin{align*}
-\end{align*}
 
 \begin{question}{8}
 a. For each graph $G$ below, find the incidence matrix $M(G)$. (See definition 1.1.17 and Example 1.1.19.)
