@@ -110,14 +110,40 @@ even cycle.
 \end{question}
 
 \begin{question}{3}
-Prove the following by strong induction on the length of the trail: The edge set of every closed
-trail can be partitioned into zero or more pairwise edge-disjoint cycles.
+Prove the following by strong induction on the length of the trail: The edge set of every closed trail can be partitioned into one or more pairwise edge-disjoint cycles.
 \end{question}
 
+\textbf{i.} The edge set $E$ of every closed trail can be partitioned into one or more pairwise edge-disjoint cycles\\
+
+Proof: Let $G$ be the graph containing the edge set $E$. \\
+
+Let $n$ be the length of the maximum closed trial in $G$ of the form ($v_1$, $v_2$), ... ($v_n$, $v_1$). \\
+
+Let $C$ be the smallest cycle in $G$ of the form ($v_i$, $v_{i+1}$)...($v_{i+k-1}$, $v_{i+k}$), where $v_i = v_{i+k}$ and $v_i$...$v_{i+k-1}$ are distinct (if the vertexes were not distinct that would mean it would be able to be partitioned into smaller cycles, and we started this exercise assuming C is the smallest cycle). \\
+
+If $C = G$, the graph can be partitioned into one pairwise edge-disjoint cycle.\\
+
+Otherwise, Let $G' = G - C$\\
+
+The length of the closed trial through $G'$ cannot be more than $n$, and would have the closed trial ($v_1$, $v_2$)...($v_n$, $v_1$). \\
+
+By induction we can partition the edge set of $G'$ into smaller disjoint cycles. Thus we show that the edge set of $G$ can be partitioned into disjoint cycles consisting of all the cycles in $G'$ and $C$\\
+
+\textbf{ii.} If an edge set $E$ can be partitioned into one or more pairwise edge-disjoint cycles, it is a closed trial. \\
+
+Proof: Let $G$ be the graph containing the edge set $E$.\\
+
+If the edge set of $G$ can be partitioned into pairwise edge-disjoint cycles, every vertex must have an even degree (for v to be on a cycle it must have 2 degrees). Since every vertex is even $G$ must be Eulerian by Theorem 1.2.26. Every Eulerian graph must have a closed trial. Thus $G$ must have a closed trial.
+
 \begin{question}{4}
-Suppose that T is a maximal trail in a simple graph G and that T has at least one edge and is
-not closed. Prove that the endpoints of T have odd degree.
+Suppose that $T$ is a maximal trail in a simple graph $G$ and that $T$ has at least one edge and is not closed. Prove that the endpoints of T have odd degree.
 \end{question}
+
+Let $v_1$ and $v_n$ be the endpoints of $T$ (it must have at least 2 distinct vertexes, since it has at least one edge, and is not closed.). \\
+
+Since $T$ is not closed, $v_1$ and $v_n$ cannot be connected. \\
+
+If $v_1$ had a neighbors $v_0$, and their connected edge was not in $T$, it must be added in $T$ in order for $T$ to be maximal. Thus $v_1$ can only have one neighbor $v_2$. And any vertex, on a simple graph, with one neighbor has a degree of 1. The same argument can be applied to $v_n$ showing that it, also, has a degree of 1.
 
 \begin{question}{5}
 If G is a graph with vertices v1, v2, . . . , vn and Ak denotes the kth power of the adjacency matrix
