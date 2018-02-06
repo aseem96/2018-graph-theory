@@ -34,7 +34,7 @@
 %\renewcommand{\qedsymbol}{\filledbox}
 
 \title{Homework 3}%replace X with the appropriate number
-\author{Dustin Lambright - dalambri \\ Aseem Raina - araina \\ Bihan Zhang - bzhang28 \\ Anshul Fadnavis - asfadnav \\ 
+\author{Dustin Lambright - dalambri \\ Aseem Raina - araina \\ Bihan Zhang - bzhang28 \\ Anshul Fadnavis - asfadnav\\
 %replace with your name
 CSC 565 - Graph Theory} %if necessary, replace with your course title
 
@@ -109,25 +109,17 @@ The graph $C_6$ is the closest we can get to a graph without a clique of size 3 
 Prove or disprove: In a simple graph, every closed even trail of length more than 3 contains an even cycle.
 \begin{align*}
 \begin{tikzpicture}
-\node[shape=circle,draw=black] (A) at (0,0) {};
 \node[shape=circle,draw=black] (B) at (1,0) {};
-\node[shape=circle,draw=black] (C) at (0,-2) {};
 \node[shape=circle,draw=black] (D) at (1,-2) {};
 \node[shape=circle,draw=black] (E) at (2,-1) {};
 \node[shape=circle,draw=black] (F) at (3,0) {};
-\node[shape=circle,draw=black] (G) at (4,0) {};
 \node[shape=circle,draw=black] (H) at (3,-2) {};
-\node[shape=circle,draw=black] (I) at (4,-2) {};
-\path [] (A) edge node[left] {} (B);
-\path [] (C) edge node[left] {} (D);
 \path [] (B) edge node[left] {} (E);
 \path [] (D) edge node[left] {} (E);
-\path [] (A) edge node[left] {} (C);
-\path [] (F) edge node[left] {} (G);
 \path [] (E) edge node[left] {} (F);
-\path [] (I) edge node[left] {} (G);
-\path [] (I) edge node[left] {} (H);
 \path [] (H) edge node[left] {} (E);
+\path [] (B) edge node[left] {} (D);
+\path [] (F) edge node[left] {} (H);
 \end{tikzpicture}
 \end{align*}
 \end{question}
