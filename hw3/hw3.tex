@@ -128,8 +128,6 @@ Prove or disprove: In a simple graph, every closed even trail of length more tha
 Prove the following by strong induction on the length of the trail: The edge set of every closed trail can be partitioned into one or more pairwise edge-disjoint cycles.
 \end{question}
 
-\textbf{i.} The edge set $E$ of every closed trail can be partitioned into one or more pairwise edge-disjoint cycles\\
-
 Proof: Let $G$ be the graph containing the edge set $E$. \\
 
 Let $n$ be the length of the maximum closed trial in $G$ of the form ($v_1$, $v_2$), ... ($v_n$, $v_1$). \\
@@ -144,11 +142,6 @@ The length of the closed trial through $G'$ cannot be more than $n$, and would h
 
 By induction we can partition the edge set of $G'$ into smaller disjoint cycles. Thus we show that the edge set of $G$ can be partitioned into disjoint cycles consisting of all the cycles in $G'$ and $C$\\
 
-\textbf{ii.} If an edge set $E$ can be partitioned into one or more pairwise edge-disjoint cycles, it is a closed trial. \\
-
-Proof: Let $G$ be the graph containing the edge set $E$.\\
-
-If the edge set of $G$ can be partitioned into pairwise edge-disjoint cycles, every vertex must have an even degree (for v to be on a cycle it must have 2 degrees). Since every vertex is even $G$ must be Eulerian by Theorem 1.2.26. Every Eulerian graph must have a closed trial. Thus $G$ must have a closed trial.
 
 \begin{question}{4}
 Suppose that $T$ is a maximal trail in a simple graph $G$ and that $T$ has at least one edge and is not closed. Prove that the endpoints of T have odd degree.
