@@ -109,7 +109,7 @@ The graph $C_6$ is the closest we can get to a graph without a clique of size 3 
 Prove or disprove: In a simple graph, every closed even trail of length more than 3 contains an even cycle.
 \end{question}
 
-To disprove the given statement, a single example should suffice.\\
+To disprove the given statement, a single counterexample should suffice.\\
 In the following simple graph, the closed even trail A-B-C-E-D-C-A of length 6:\\
 \begin{align*}
 \begin{tikzpicture}
@@ -174,8 +174,7 @@ is possible: \\
 a. (3, 3, 3, 2, 2, 2) \\
 For any graph G, the number of vertices of odd degree should be even. Here, we have 3 vertices of odd degree (3,3,3), hence no such graph is possible. \\
 b. (7, 6, 5, 4, 3, 2, 1) \\
-No such graph is possible as a vertex cannot have degree equal to the total number of
-vertices in the graph (i.e. 7). \\ \\
+No such graph is possible as a vertex cannot have degree equal to the total number of vertices in a simple graph (i.e. 7). \\ \\
 c. (3, 3, 2, 2, 1, 1) \\
 A graph is possible \\
 \begin{align*}
@@ -195,17 +194,17 @@ A graph is possible \\
 \end{tikzpicture}
 \end{align*}
 d. (7, 6, 5, 4, 3, 3, 2) \\
-No such graph is possible as a vertex cannot have degree equal to the total number of
-vertices in the graph (i.e. 7). \\
-e. (6, 6, 5, 4, 3, 3, 1)
-No such graph is possible as two vertices cannot have degree 6 for the following sequence.
+No such graph is possible as a vertex cannot have degree equal to the total number of vertices in a simple graph (i.e. 7). \\
+e. (6, 6, 5, 4, 3, 3, 1)\\
+For the given sequence of seven vertices, two vertices have degree 6. For such a simple graph to exist, all vertices must have a degree of at least 2. Since one vertex has degree 1, such a graph is not possible.
 \end{question}
 
 \begin{question}{7}
  How many different simple graphs are there with 5 edges and with vertex set {v1, v2, . . . v5}?
 (We are counting labeled graphs, not isomorphism classes)
-For an edge, we need to choose 2 vertices out of 5, which can be done in ${5 \choose 2}$ ways. The total number of such edge subsets is $2^{5 \choose 2} = 2^{10} = 1024$ graphs.
 \end{question}
+
+For an edge, we need to choose 2 vertices out of 5, which can be done in ${5 \choose 2}$ ways. The total number of such edge subsets is $2^{5 \choose 2} = 2^{10} = 1024$ graphs.
 
 \begin{question}{8}
 Prove by contradiction: A graph with every vertex degree even has no cut-edge.
