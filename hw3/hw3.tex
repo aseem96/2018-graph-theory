@@ -107,13 +107,17 @@ The graph $C_6$ is the closest we can get to a graph without a clique of size 3 
 
 \begin{question}{2}
 Prove or disprove: In a simple graph, every closed even trail of length more than 3 contains an even cycle.
+\end{question}
+
+To disprove the given statement, a single example should suffice.\\
+In the following simple graph, the closed even trail A-B-C-E-D-C-A of length 6:\\
 \begin{align*}
 \begin{tikzpicture}
-\node[shape=circle,draw=black] (B) at (1,0) {};
-\node[shape=circle,draw=black] (D) at (1,-2) {};
-\node[shape=circle,draw=black] (E) at (2,-1) {};
-\node[shape=circle,draw=black] (F) at (3,0) {};
-\node[shape=circle,draw=black] (H) at (3,-2) {};
+\node[shape=circle,draw=black] (B) at (1,0) {A};
+\node[shape=circle,draw=black] (D) at (1,-2) {B};
+\node[shape=circle,draw=black] (E) at (2,-1) {C};
+\node[shape=circle,draw=black] (F) at (3,0) {D};
+\node[shape=circle,draw=black] (H) at (3,-2) {E};
 \path [] (B) edge node[left] {} (E);
 \path [] (D) edge node[left] {} (E);
 \path [] (E) edge node[left] {} (F);
@@ -122,7 +126,7 @@ Prove or disprove: In a simple graph, every closed even trail of length more tha
 \path [] (F) edge node[left] {} (H);
 \end{tikzpicture}
 \end{align*}
-\end{question}
+contains no even cycle.
 
 \begin{question}{3}
 Prove the following by strong induction on the length of the trail: The edge set of every closed trail can be partitioned into one or more pairwise edge-disjoint cycles.
@@ -206,6 +210,14 @@ For an edge, we need to choose 2 vertices out of 5, which can be done in ${5 \ch
 \begin{question}{8}
 Prove by contradiction: A graph with every vertex degree even has no cut-edge.
 \end{question}
+
+Let us assume that there does exist a cut-edge $e$ in graph $G$ (where every vertex has an even degree), joining vertices $v_i$ and $v_j$.\\
+Removing $e$ would divide $G$ into two the following two graphs:\\
+$G_1$: containing $v_i$ (now with an odd degree, since $e$ was removed) and zero or more vertices with an even vertex degree.\\
+$G_2$: containing $v_j$ (now with an odd degree, since $e$ was removed) and zero or more vertices with an even vertex degree.\\
+Since no graph can have an odd number of odd-degree vertices, neither $G_1$ nor $G_2$ can exist.\\
+This means that our assumption was false.\\
+Hence we have proven that a graph with every vertex degree even has no cut-edge.
 
 
 
