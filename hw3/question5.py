@@ -14,6 +14,9 @@ def createMatrix(size):
             else:
                 newRow.append(1)
         toReturn.append(newRow)
+
+    # toReturn[0][1] = 0
+    # toReturn[1][0] = 0
     return toReturn
 
 def matrixDeepCopy(matrix):
@@ -34,11 +37,10 @@ def deepCopyPathList(list):
 
 
 def findPathsRecursive(numberOfPaths, paths, matrix, walkLength, startVertexArray, startVertex, endVertex, finalWalkLength):
-    print startVertexArray
     verticesToVisit = []
-    index = len(startVertexArray) - 1
+    index = startVertexArray[len(startVertexArray) - 1]
     for i in range(len(matrix[startVertexArray[len(startVertexArray) - 1]])):
-        if matrix[startVertexArray[len(startVertexArray) -1 ]][i] != 0:
+        if matrix[index][i] != 0:
             verticesToVisit.append(i)
 
     for item in verticesToVisit:
@@ -47,42 +49,60 @@ def findPathsRecursive(numberOfPaths, paths, matrix, walkLength, startVertexArra
         newList.append(item)
         if item == endVertex and walkLength == finalWalkLength:
             numberOfPaths = numberOfPaths + 1
+            startVertexArray.append(item)
+            paths.append(startVertexArray)
+        elif walkLength < finalWalkLength:
+            newMatrix[startVertex][item] = newMatrix[startVertex][item] - 1
+            newMatrix[item][startVertex] = newMatrix[item][startVertex] - 1
 
-        newMatrix[startVertex][item] = newMatrix[startVertex][item] - 1
-        newMatrix[item][startVertex] = newMatrix[item][startVertex] - 1
-
-        numberOfPaths, paths = findPathsRecursive(numberOfPaths, paths, newMatrix, walkLength + 1, newList, item, endVertex, finalWalkLength)
+            numberOfPaths, paths = findPathsRecursive(numberOfPaths, paths, newMatrix, walkLength + 1, newList, item, endVertex, finalWalkLength)
 
 
 
-    return numberOfPaths, None
+    return numberOfPaths, paths
 
 
 
 def getNumberOfPaths(matrix, startVertex, endVertex, finalWalkLength):
+    finalPaths = []
+    finalNumberOfPaths = 0
     stepOneArray = []
     for i in range(len(matrix[startVertex])):
         if matrix[startVertex][i] != 0:
             stepOneArray.append(i)
+
     for i in range(len(matrix[startVertex])):
         if i in stepOneArray:
             newMatrix = matrixDeepCopy(matrix)
-            newMatrix[startVertex][i] = newMatrix[startVertex][i] - 1
-            newMatrix[i][startVertex] = newMatrix[i][startVertex] - 1
+            # newMatrix[startVertex][i] = newMatrix[startVertex][i] - 1
+            # newMatrix[i][startVertex] = newMatrix[i][startVertex] - 1
             startVertexArray = [startVertex, i]
-            numberOfPaths, paths = findPathsRecursive(0, [], newMatrix, 1, startVertexArray, startVertex, endVertex, finalWalkLength)
+            numberOfPaths, paths = findPathsRecursive(0, [], newMatrix, 2, startVertexArray, startVertex, endVertex, finalWalkLength)
+            finalNumberOfPaths = finalNumberOfPaths + numberOfPaths
+            for line in paths:
+                finalPaths.append(line)
+    return finalNumberOfPaths, finalPaths
 
-    return numberOfPaths
 
 
 
 
-newMatrix = createMatrix(6)
 
-printMatrix(newMatrix)
+# printMatrix(newMatrix)
 print("")
-numberofPaths = getNumberOfPaths(newMatrix, 0, 5, 2)
-print numberofPaths
-
+for i in range(2,10):
+    newMatrix = createMatrix(i)
+    numberOfPaths, paths = getNumberOfPaths(newMatrix, 0, 1, 3)
+    print i, numberOfPaths
+    # for path in paths:
+    #     print path
 print("")
-printMatrix(newMatrix)
+# printMatrix(newMatrix)
+
+
+go = 3
+newMatrix = createMatrix(go)
+numberOfPaths, paths = getNumberOfPaths(newMatrix, 0, 1, 3)
+print go, numberOfPaths
+for path in paths:
+    print path

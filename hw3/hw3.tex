@@ -127,8 +127,104 @@ of $G$ under matrix multiplication then \\ \\
 
 Show how to use (***) to solve the following without multipltying matrices and prove your answer
 correct: Let A be the adjacency matrix of $K_n$. If $i = j$, then $A^3[i, j]$ =\_\_\_\_ . Otherwise
-$A3[i, j]$ = \_\_\_\_.
+$A^{3}[i, j]$ = \_\_\_\_.
 \end{question}
+
+Consider the graph $K_3$, whose vertex count is $n$.
+\begin{align*}
+\begin{tikzpicture}
+\node[shape=circle,draw=black] (A) at (1,1) {A};
+\node[shape=circle,draw=black] (B) at (0,0) {B};
+\node[shape=circle,draw=black] (C) at (2,0) {C};
+\path [] (A) edge node[left] {} (B);
+\path [] (A) edge node[left] {} (C);
+\path [] (B) edge node[left] {} (C);
+\end{tikzpicture}
+\end{align*}
+
+These two branches can be calculated as follows: 
+\begin{center}
+\Large TO CALCULATE (***) FOR $i \neq j$
+\end{center}
+\normalsize
+
+There are 3 possible paths from A to C. \\
+\begin{center}
+\begin{tabular}{|c|}  \hline
+\{AC, CA, AC\} \\
+\{AC, CB, BC\} \\
+\{AB, BA, AC\} \\ \hline
+\end{tabular}
+\end{center}
+
+To calculate the number of walks from A to C, we need to break down the number of moves needed from two branches: going to C, and not going to C
+\begin{center}
+\begin{tabular}{|c|}  \hline
+\{AC, CA, AC\} \\
+\{AC, CB, BC\} \\ \hline
+\{AB, BA, AC\} \\ \hline
+\end{tabular}
+
+
+\begin{tabular}{|c|c|c|}
+\multicolumn{3}{c}{BEGINNING MOVE TO C (THE END POINT)}  \\ \hline
+MOVE TO & OPTIONS & REASONING \\ \hline
+C & 1 & You can only move to C, as per definition \\ \hline
+A or B &$n-1$ & Any option but C works for this step \\ \hline
+C & 1 & The walk's third step has to end on C \\ \hline
+\end{tabular} \\
+
+
+\begin{tabular}{|c|c|c|}
+\multicolumn{3}{c}{BEGINNING MOVE TO ANY POINT (THE END POINT)}  \\ \hline
+MOVE TO & OPTIONS & REASONING \\ \hline
+B & $n-2$ & You can only move to any vertex that isn't C \\ \hline
+A or C & $n-2$ & C cannot be the choice in this step \\ \hline
+C & 1 & The walk's third step has to end on C \\ \hline
+\end{tabular} \\
+\end{center}
+
+If we add these two options together, we get $(1 \times (n-1) \times 1) +  ((n-2) \times (n-2) \times 1)$, which simplifies to $n^{2} - 3n +3$. \\
+
+
+The formula for calculating (***) $A^{3}[i, j]$ where $i \neq j$ therefore is $n^{2} -3n + 3$.
+
+\begin{center}
+\Large TO CALCULATE (***) FOR $i = j$
+\end{center}
+\normalsize
+
+There are 2 possible paths from A to A. \\
+\begin{center}
+\begin{tabular}{|c|}  \hline
+\{AB, BC, CA\} \\
+\{AC, CB, BA\} \\ \hline
+\end{tabular}
+\end{center}
+
+To calculate the number of paths, we have the following options: \\
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\multicolumn{3}{c}{STARTING AND ENDING AT THE SAME POINT}  \\ \hline
+MOVE TO & OPTIONS & REASONING \\ \hline
+B or A & $n-1$ & Any option will work on this step \\ \hline
+A or B &$n-2$ & Any option will work, except for C \\ \hline
+C & 1 & The walk's third step has to end on C \\ \hline
+\end{tabular} \\
+\end{center}
+
+When we combine these, we get $(n-1) \times (n-2) \times 1$, which simplifies to $n^{2} -3n + 2$.
+
+The formula for calculating (***) $A^{3}[i, j]$ where $i = j$ therefore is $n^{2} -3n + 2$.
+
+\begin{center}
+\Large IN CONCLUSION \\
+
+\normalsize
+$ A^{3}[i,j] = $ 
+    $\begin{cases} n^{2} -3n + 3  & \mbox{if } i \neq  j  \\  n^{2} -3n + 2   & \mbox{if } i =j \\   \end{cases}$ \\
+    where $n$ is the number of vertices in $G$.
+\end{center}
 
 \begin{question}{6}
 Draw a simple, connected graph with the following degree sequence, or prove that no such graph
