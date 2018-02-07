@@ -101,11 +101,11 @@ By induction we can partition the edge set of $G'$ into smaller disjoint cycles.
 Suppose that $T$ is a maximal trail in a simple graph $G$ and that $T$ has at least one edge and is not closed. Prove that the endpoints of T have odd degree.
 \end{question}
 
-Let $v_1$ and $v_n$ be the endpoints of $T$ (it must have at least 2 distinct vertexes, since it has at least one edge, and is not closed.). \\
+Let $v_1$ and $v_n$ be the endpoints of $T$ ($T$ must have at least 2 distinct vertexes, since it has at least one edge, and is not closed). \\
 
 Since $T$ is not closed, $v_1$ and $v_n$ cannot be connected. \\
 
-If $v_1$ had a neighbors $v_0$, and their connected edge was not in $T$, it must be added in $T$ in order for $T$ to be maximal. Thus $v_1$ can only have one neighbor $v_2$. And any vertex, on a simple graph, with one neighbor has a degree of 1. The same argument can be applied to $v_n$ showing that it, also, has a degree of 1. \\
+If $v_1$ had a neighbor $v_0$, and their connected edge was not in $T$, it must be added in $T$ in order for $T$ to be maximal. Thus $v_1$ can only have one neighbor, $v_2$. And any vertex, on a simple graph, with one neighbor has a degree of 1. The same argument can be applied to $v_n$ showing that it, also, has only one neighbor ($v_{n-1}$) and thus also has a degree of 1. \\
 
 \begin{question}{5}
 If $G$ is a graph with vertices $v_1, v_2, . . . , v_n$ and $A^k$ denotes the kth power of the adjacency matrix
@@ -113,7 +113,7 @@ of $G$ under matrix multiplication then \\ \\
 
 (***) $A^{k}[i, j]$ is the number of $v_i, v_j$ -walks of length $k$ in $G$. \\ \\
 
-Show how to use (***) to solve the following without multipltying matrices and prove your answer
+Show how to use (***) to solve the following without multiplying matrices and prove your answer
 correct: Let A be the adjacency matrix of $K_n$. If $i = j$, then $A^3[i, j]$ =\_\_\_\_ . Otherwise
 $A^{3}[i, j]$ = \_\_\_\_.
 \end{question}
