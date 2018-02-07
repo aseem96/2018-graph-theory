@@ -117,7 +117,8 @@ correct: Let A be the adjacency matrix of $K_n$. If $i = j$, then $A^3[i, j]$ =\
 $A^{3}[i, j]$ = \_\_\_\_.
 \end{question}
 
-Consider the graph $K_3$, whose vertex count is $n$.
+Consider the graph $K_3$ ($n$ = 3).\\
+Note: Although we've used $K_3$ to explain the derivation, this can be applied for any $K_n$.
 \begin{align*}
 \begin{tikzpicture}
 \node[shape=circle,draw=black] (A) at (1,1) {A};
@@ -129,7 +130,7 @@ Consider the graph $K_3$, whose vertex count is $n$.
 \end{tikzpicture}
 \end{align*}
 
-These two branches can be calculated as follows: 
+The expressions for these two cases can be derived as follows: 
 \begin{center}
 \Large TO CALCULATE (***) FOR $i \neq j$
 \end{center}
@@ -144,7 +145,11 @@ There are 3 possible paths from A to C. \\
 \end{tabular}
 \end{center}
 
-To calculate the number of walks from A to C, we need to break down the number of moves needed from two branches: going to C, and not going to C
+To calculate the number of walks of length 3 from source A to destination C, we could segregate them based on the first move:
+\begin{enumerate}
+\item to destination node C
+\item to any other node except destination node C
+\end{enumerate}
 \begin{center}
 \begin{tabular}{|c|}  \hline
 \{AC, CA, AC\} \\
@@ -163,18 +168,18 @@ C & 1 & The walk's third step has to end on C \\ \hline
 
 
 \begin{tabular}{|c|c|c|}
-\multicolumn{3}{c}{BEGINNING MOVE TO ANY POINT (THE END POINT)}  \\ \hline
+\multicolumn{3}{c}{BEGINNING MOVE TO ANY OTHER POINT BUT THE END POINT}  \\ \hline
 MOVE TO & OPTIONS & REASONING \\ \hline
-B & $n-2$ & You can only move to any vertex that isn't C \\ \hline
-A or C & $n-2$ & C cannot be the choice in this step \\ \hline
+B & $n-2$ & Any node except the current node A and destination node C \\ \hline
+A or C & $n-2$ & C Any node except the current node B and destination node C \\ \hline
 C & 1 & The walk's third step has to end on C \\ \hline
 \end{tabular} \\
 \end{center}
 
-If we add these two options together, we get $(1 \times (n-1) \times 1) +  ((n-2) \times (n-2) \times 1)$, which simplifies to $n^{2} - 3n +3$. \\
+If we add these two options together, we get $(1 \times (n-1) \times 1) +  ((n-2) \times (n-2) \times 1)$, which simplifies to $n^{2} - 3n +3$ and can be re-written as $((n-1) \times (n-2)) + 1$. \\
 
 
-The formula for calculating (***) $A^{3}[i, j]$ where $i \neq j$ therefore is $n^{2} -3n + 3$.
+The formula for calculating (***) $A^{3}[i, j]$ where $i \neq j$ therefore is $(n-1) \times (n-2) + 1$.
 
 \begin{center}
 \Large TO CALCULATE (***) FOR $i = j$
@@ -194,22 +199,22 @@ To calculate the number of paths, we have the following options: \\
 \begin{tabular}{|c|c|c|}
 \multicolumn{3}{c}{STARTING AND ENDING AT THE SAME POINT}  \\ \hline
 MOVE TO & OPTIONS & REASONING \\ \hline
-B or A & $n-1$ & Any option will work on this step \\ \hline
-A or B &$n-2$ & Any option will work, except for C \\ \hline
-C & 1 & The walk's third step has to end on C \\ \hline
+B or C & $n-1$ & Any other node\\ \hline
+C or B &$n-2$ & Any node except the current node and destination node A \\ \hline
+A & 1 & The walk's third step has to end on A \\ \hline
 \end{tabular} \\
 \end{center}
 
-When we combine these, we get $(n-1) \times (n-2) \times 1$, which simplifies to $n^{2} -3n + 2$.
+When we combine these, we get $(n-1) \times (n-2) \times 1$.
 
-The formula for calculating (***) $A^{3}[i, j]$ where $i = j$ therefore is $n^{2} -3n + 2$.
+The formula for calculating (***) $A^{3}[i, j]$ where $i = j$ therefore is $(n-1) \times (n-2)$.
 
 \begin{center}
 \Large IN CONCLUSION \\
 
 \normalsize
 $ A^{3}[i,j] = $ 
-    $\begin{cases} n^{2} -3n + 3  & \mbox{if } i \neq  j  \\  n^{2} -3n + 2   & \mbox{if } i =j \\   \end{cases}$ \\
+    $\begin{cases} (n-1) \times (n-2) + 1  & \mbox{if } i \neq  j  \\  (n-1) \times (n-2)   & \mbox{if } i =j \\   \end{cases}$ \\
     where $n$ is the number of vertices in $G$.
 \end{center}
 
