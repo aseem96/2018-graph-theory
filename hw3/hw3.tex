@@ -49,8 +49,9 @@ set of size 3.
 Let $G$ be a graph of 6 vertices in the set $v$, named $a, b, c, d, e$, and $f$ \\ 
 If the degree of any vertex is 2, the three unconnected vertices form an independent set of size 3.  Therefore, in order to have an independent set of less than 3, every vertex needs to have a degree of at least 3.  If we build a 3-regular graph with 6 vertices, it will turn out as follows:\\
 We start by connecting $a$ to $b, c,$ and  $d$. $b, c,$ or $d$ cannot be adjacent, since that would form a clique of size 3 with $a$. In so doing, we create an independent set of size 3 with $b, c, $ and $d$.\\
+In general, a vertex v in a G has at least 3 neighbor or 3 non neighbors. By symmetry (if we complement G , we still have to prove the same statement), we may assume that x has at least 3 neighbors. If any pair of these vertices are connected, then with x we have 3 mutual connections (clique), but if no pair of neighbors of x is connected, then the neighbors of x are three non-neighbors (independent set).
 
-According to Ramsey's Theorem, the value of $R(3,3)$ is ${(3+3-2) \choose (3-1)}$, or ${4 \choose 2} = 6$, meaning a graph with a guarnateed idependent set of size 3 or a clique of size 3 must have a $V(G) \geq 6$
+According to Ramsey's Theorem, the value of $R(3,3)$ is ${(3+3-2) \choose (3-1)}$, or ${4 \choose 2} = 6$, meaning a graph with a guarnateed idependent set of size 3 or a clique of size 3 must have a $V(G) \geq 6$ \\
 
 
 
@@ -75,7 +76,7 @@ In the following simple graph, the closed even trail A-B-C-E-D-C-A of length 6:\
 \path [] (F) edge node[left] {} (H);
 \end{tikzpicture}
 \end{align*}
-contains no even cycle.
+contains no even cycle. \\
 
 \begin{question}{3}
 Prove the following by strong induction on the length of the trail: The edge set of every closed trail can be partitioned into one or more pairwise edge-disjoint cycles.
@@ -104,7 +105,7 @@ Let $v_1$ and $v_n$ be the endpoints of $T$ (it must have at least 2 distinct ve
 
 Since $T$ is not closed, $v_1$ and $v_n$ cannot be connected. \\
 
-If $v_1$ had a neighbors $v_0$, and their connected edge was not in $T$, it must be added in $T$ in order for $T$ to be maximal. Thus $v_1$ can only have one neighbor $v_2$. And any vertex, on a simple graph, with one neighbor has a degree of 1. The same argument can be applied to $v_n$ showing that it, also, has a degree of 1.
+If $v_1$ had a neighbors $v_0$, and their connected edge was not in $T$, it must be added in $T$ in order for $T$ to be maximal. Thus $v_1$ can only have one neighbor $v_2$. And any vertex, on a simple graph, with one neighbor has a degree of 1. The same argument can be applied to $v_n$ showing that it, also, has a degree of 1. \\
 
 \begin{question}{5}
 If $G$ is a graph with vertices $v_1, v_2, . . . , v_n$ and $A^k$ denotes the kth power of the adjacency matrix
@@ -215,7 +216,7 @@ The formula for calculating (***) $A^{3}[i, j]$ where $i = j$ therefore is $(n-1
 \normalsize
 $ A^{3}[i,j] = $ 
     $\begin{cases} (n-1) \times (n-2) + 1  & \mbox{if } i \neq  j  \\  (n-1) \times (n-2)   & \mbox{if } i =j \\   \end{cases}$ \\
-    where $n$ is the number of vertices in $G$.
+    where $n$ is the number of vertices in $G$. \\
 \end{center}
 
 \begin{question}{6}
