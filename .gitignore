@@ -231,3 +231,4 @@ TSWLatexianTemp*
 # OSX things to exclude:
 
 .DS_Store
+hw3/hw3.pdf

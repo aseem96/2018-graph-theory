@@ -34,7 +34,8 @@
 %\renewcommand{\qedsymbol}{\filledbox}
 
 \title{Homework 3}%replace X with the appropriate number
-\author{Dustin Lambright - dalambri \\ Aseem Raina - araina \\ Bihan Zhang - bzhang28\\ %replace with your name
+\author{Dustin Lambright - dalambri \\ Aseem Raina - araina \\ Bihan Zhang - bzhang28 \\ Anshul Fadnavis - asfadnav\\
+%replace with your name
 CSC 565 - Graph Theory} %if necessary, replace with your course title
 
 \maketitle
@@ -45,7 +46,7 @@ Show that every simple graph $G$ with 6 vertices has either a clique of size 3 o
 set of size 3.
 \end{question}
 
-By the definition of inependent sets and cliques, any graph G with a clique of size n will also have a clique of n-1, n-2, ... n-(n-1).  The same goes for an independent set.  Therefore, using contradiction, if a graph does not have a clique of size 3 and does not have an independent set of size 3, the statement is false. \\ \\
+By the definition of independent sets and cliques, any graph G with a clique of size n will also have a clique of n-1, n-2, ... n-(n-1).  The same goes for an independent set.  Therefore, using contradiction, if a graph does not have a clique of size 3 and does not have an independent set of size 3, the statement is false. \\ \\
 
 The graph $K_{1,5}$ has a maximum clique size of 2, but an independent set of 5. (displayed in red)
 \begin{align*}
@@ -105,19 +106,56 @@ This graph has a a maximum independent set of 3, and a maximum clique of 2. The 
 The graph $C_6$ is the closest we can get to a graph without a clique of size 3 and without an independent set of size 3, but it has an independent set of size three, proving that a graph with a vertex count of 6 has to have an independent set of size 3 or a clique of size 3.
 
 \begin{question}{2}
-Prove or disprove: In a simple graph, every closed even trail of length more than 3 contains an
-even cycle.
+Prove or disprove: In a simple graph, every closed even trail of length more than 3 contains an even cycle.
 \end{question}
+
+To disprove the given statement, a single counterexample should suffice.\\
+In the following simple graph, the closed even trail A-B-C-E-D-C-A of length 6:\\
+\begin{align*}
+\begin{tikzpicture}
+\node[shape=circle,draw=black] (B) at (1,0) {A};
+\node[shape=circle,draw=black] (D) at (1,-2) {B};
+\node[shape=circle,draw=black] (E) at (2,-1) {C};
+\node[shape=circle,draw=black] (F) at (3,0) {D};
+\node[shape=circle,draw=black] (H) at (3,-2) {E};
+\path [] (B) edge node[left] {} (E);
+\path [] (D) edge node[left] {} (E);
+\path [] (E) edge node[left] {} (F);
+\path [] (H) edge node[left] {} (E);
+\path [] (B) edge node[left] {} (D);
+\path [] (F) edge node[left] {} (H);
+\end{tikzpicture}
+\end{align*}
+contains no even cycle.
 
 \begin{question}{3}
-Prove the following by strong induction on the length of the trail: The edge set of every closed
-trail can be partitioned into zero or more pairwise edge-disjoint cycles.
+Prove the following by strong induction on the length of the trail: The edge set of every closed trail can be partitioned into one or more pairwise edge-disjoint cycles.
 \end{question}
 
+Proof: Let $G$ be the graph containing the edge set $E$. \\
+
+Let $n$ be the length of the maximum closed trial in $G$ of the form ($v_1$, $v_2$), ... ($v_n$, $v_1$). \\
+
+Let $C$ be the smallest cycle in $G$ of the form ($v_i$, $v_{i+1}$)...($v_{i+k-1}$, $v_{i+k}$), where $v_i = v_{i+k}$ and $v_i$...$v_{i+k-1}$ are distinct (if the vertexes were not distinct that would mean it would be able to be partitioned into smaller cycles, and we started this exercise assuming C is the smallest cycle). \\
+
+If $C = G$, the graph can be partitioned into one pairwise edge-disjoint cycle.\\
+
+Otherwise, Let $G' = G - C$\\
+
+The length of the closed trial through $G'$ cannot be more than $n$, and would have the closed trial ($v_1$, $v_2$)...($v_n$, $v_1$). \\
+
+By induction we can partition the edge set of $G'$ into smaller disjoint cycles. Thus we show that the edge set of $G$ can be partitioned into disjoint cycles consisting of all the cycles in $G'$ and $C$\\
+
+
 \begin{question}{4}
-Suppose that T is a maximal trail in a simple graph G and that T has at least one edge and is
-not closed. Prove that the endpoints of T have odd degree.
+Suppose that $T$ is a maximal trail in a simple graph $G$ and that $T$ has at least one edge and is not closed. Prove that the endpoints of T have odd degree.
 \end{question}
+
+Let $v_1$ and $v_n$ be the endpoints of $T$ (it must have at least 2 distinct vertexes, since it has at least one edge, and is not closed.). \\
+
+Since $T$ is not closed, $v_1$ and $v_n$ cannot be connected. \\
+
+If $v_1$ had a neighbors $v_0$, and their connected edge was not in $T$, it must be added in $T$ in order for $T$ to be maximal. Thus $v_1$ can only have one neighbor $v_2$. And any vertex, on a simple graph, with one neighbor has a degree of 1. The same argument can be applied to $v_n$ showing that it, also, has a degree of 1.
 
 \begin{question}{5}
 If $G$ is a graph with vertices $v_1, v_2, . . . , v_n$ and $A^k$ denotes the kth power of the adjacency matrix
@@ -230,10 +268,31 @@ $ A^{3}[i,j] = $
 Draw a simple, connected graph with the following degree sequence, or prove that no such graph
 is possible: \\
 a. (3, 3, 3, 2, 2, 2) \\
-b. (7, 6, 5, 4, 3, 2, 1) \\ 
+For any graph G, the number of vertices of odd degree should be even. Here, we have 3 vertices of odd degree (3,3,3), hence no such graph is possible. \\
+b. (7, 6, 5, 4, 3, 2, 1) \\
+No such graph is possible as a vertex cannot have degree equal to the total number of vertices in a simple graph (i.e. 7). \\ \\
 c. (3, 3, 2, 2, 1, 1) \\
+A graph is possible \\
+\begin{align*}
+\begin{tikzpicture}
+\node[shape=circle,draw=black] (A) at (-1,0) {};
+\node[shape=circle,draw=black] (B) at (0,1) {};
+\node[shape=circle,draw=black] (C) at (1,0) {};
+\node[shape=circle,draw=black] (D) at (0,-1) {};
+\node[shape=circle,draw=black] (E) at (-2,0) {};
+\node[shape=circle,draw=black] (F) at (2,0) {};
+\path [] (A) edge node[left] {} (B);
+\path [] (B) edge node[left] {} (C);
+\path [] (C) edge node[left] {} (D);
+\path [] (D) edge node[left] {} (A);
+\path [] (A) edge node[left] {} (E);
+\path [] (C) edge node[left] {} (F);
+\end{tikzpicture}
+\end{align*}
 d. (7, 6, 5, 4, 3, 3, 2) \\
-e. (6, 6, 5, 4, 3, 3, 1) 
+No such graph is possible as a vertex cannot have degree equal to the total number of vertices in a simple graph (i.e. 7). \\
+e. (6, 6, 5, 4, 3, 3, 1)\\
+For the given sequence of seven vertices, two vertices have degree 6. For such a simple graph to exist, all vertices must have a degree of at least 2. Since one vertex has degree 1, such a graph is not possible.
 \end{question}
 
 \begin{question}{7}
@@ -241,9 +300,19 @@ e. (6, 6, 5, 4, 3, 3, 1)
 (We are counting labeled graphs, not isomorphism classes)
 \end{question}
 
+For an edge, we need to choose 2 vertices out of 5, which can be done in ${5 \choose 2}$ ways. The total number of such edge subsets is $2^{5 \choose 2} = 2^{10} = 1024$ graphs.
+
 \begin{question}{8}
 Prove by contradiction: A graph with every vertex degree even has no cut-edge.
 \end{question}
+
+Let us assume that there does exist a cut-edge $e$ in graph $G$ (where every vertex has an even degree), joining vertices $v_i$ and $v_j$.\\
+Removing $e$ would divide $G$ into two the following two graphs:\\
+$G_1$: containing $v_i$ (now with an odd degree, since $e$ was removed) and zero or more vertices with an even vertex degree.\\
+$G_2$: containing $v_j$ (now with an odd degree, since $e$ was removed) and zero or more vertices with an even vertex degree.\\
+Since no graph can have an odd number of odd-degree vertices, neither $G_1$ nor $G_2$ can exist.\\
+This means that our assumption was false.\\
+Hence we have proven that a graph with every vertex degree even has no cut-edge.
 
 
 
