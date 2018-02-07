@@ -255,7 +255,25 @@ For the given sequence of seven vertices, two vertices have degree 6. For such a
 (We are counting labeled graphs, not isomorphism classes)
 \end{question}
 
-For an edge, we need to choose 2 vertices out of 5, which can be done in ${5 \choose 2}$ ways. The total number of such edge subsets is $2^{5 \choose 2} = 2^{10} = 1024$ graphs.
+Consider the following adjacency table for 5 vertices. There are $(5-1)!$ places to place an edge, so the number of different simple graphs is ${10 \choose 5}= 252$
+
+
+	\begin{tabular}{c|c|c|c|c|c|}
+		\cline{2-6}
+		& v1 & v2 & v3 & v4 & v5 \\
+		\hline
+		\multicolumn{1}{|c|}{v1} & 0 & - & - & - & - \\
+		\hline
+		\multicolumn{1}{|c|}{v2} &   & 0 & - & - & - \\
+		\hline
+		\multicolumn{1}{|c|}{v3} &   &   & 0 & - & - \\
+		\hline
+		\multicolumn{1}{|c|}{v4} &   &   &   & 0 & - \\
+		\hline
+		\multicolumn{1}{|c|}{v5} &   &   &   &   & 0 \\
+		\hline
+	\end{tabular}
+
 
 \begin{question}{8}
 Prove by contradiction: A graph with every vertex degree even has no cut-edge.
