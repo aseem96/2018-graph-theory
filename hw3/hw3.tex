@@ -150,8 +150,8 @@ There are 3 possible paths from A to C. \\
 
 To calculate the number of walks of length 3 from source A to destination C, we could segregate them based on the first move:
 \begin{enumerate}
-\item to destination node C
-\item to any other node except destination node C
+\item to destination vertex C
+\item to any other vertex except destination vertex C
 \end{enumerate}
 \begin{center}
 \begin{tabular}{|c|}  \hline
@@ -164,8 +164,8 @@ To calculate the number of walks of length 3 from source A to destination C, we 
 \begin{tabular}{|c|c|c|}
 \multicolumn{3}{c}{BEGINNING MOVE TO C (THE END POINT)}  \\ \hline
 MOVE TO & OPTIONS & REASONING \\ \hline
-C & 1 & You can only move to C, as per definition \\ \hline
-A or B &$n-1$ & Any option but C works for this step \\ \hline
+C & 1 & You can only move to C, as per case 1 \\ \hline
+A or B &$n-1$ & Any vertex but C works for this step \\ \hline
 C & 1 & The walk's third step has to end on C \\ \hline
 \end{tabular} \\
 
@@ -173,8 +173,8 @@ C & 1 & The walk's third step has to end on C \\ \hline
 \begin{tabular}{|c|c|c|}
 \multicolumn{3}{c}{BEGINNING MOVE TO ANY OTHER POINT BUT THE END POINT}  \\ \hline
 MOVE TO & OPTIONS & REASONING \\ \hline
-B & $n-2$ & Any node except the current node A and destination node C \\ \hline
-A or C & $n-2$ & C Any node except the current node B and destination node C \\ \hline
+B & $n-2$ & Any vertex except the current vertex A and destination vertex C \\ \hline
+A or C & $n-2$ & C Any vertex except the current vertex B and destination vertex C \\ \hline
 C & 1 & The walk's third step has to end on C \\ \hline
 \end{tabular} \\
 \end{center}
@@ -202,8 +202,8 @@ To calculate the number of paths, we have the following options: \\
 \begin{tabular}{|c|c|c|}
 \multicolumn{3}{c}{STARTING AND ENDING AT THE SAME POINT}  \\ \hline
 MOVE TO & OPTIONS & REASONING \\ \hline
-B or C & $n-1$ & Any other node\\ \hline
-C or B &$n-2$ & Any node except the current node and destination node A \\ \hline
+B or C & $n-1$ & Any other vertex\\ \hline
+C or B &$n-2$ & Any vertex except the current vertex and destination vertex A \\ \hline
 A & 1 & The walk's third step has to end on A \\ \hline
 \end{tabular} \\
 \end{center}
