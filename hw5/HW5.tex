@@ -102,7 +102,62 @@ elegant, correct proof)
 
 
 
+\begin{question}{3}
+\end{question}
 
+\begin{question}{4} Problem 4.1.30, text
+\begin{align*}
+\begin{tikzpicture}
+\node[shape=circle,draw=black] (A) at (0,5) {5};
+\node[shape=circle,draw=black] (B) at (0,4) {10};
+\node[shape=circle,draw=black] (C) at (2,4) {2};
+\node[shape=circle,draw=black] (D) at (0,3) {8};
+\node[shape=circle,draw=black] (E) at (2,3) {4};
+\node[shape=circle,draw=black] (F) at (1,2) {6};
+\node[shape=circle,draw=black] (G) at (0,1) {9};
+\node[shape=circle,draw=black] (H) at (2,1) {3};
+\node[shape=circle,draw=black] (I) at (0,0) {1};
+\node[shape=circle,draw=black] (I) at (1,0) {7};
+\node[shape=circle,draw=black] (I) at (2,0) {11};
+\path [] (A) edge node[left] {} (B);
+\path [] (B) edge node[left] {} (C);
+\path [] (B) edge node[left] {} (D);
+\path [] (B) edge node[left] {} (E);
+\path [] (B) edge node[left] {} (F);
+\path [] (C) edge node[left] {} (D);
+\path [] (C) edge node[left] {} (E);
+\path [] (C) edge node[left] {} (F);
+\path [] (D) edge node[left] {} (E);
+\path [] (D) edge node[left] {} (F);
+\path [] (E) edge node[left] {} (F);
+\path [] (F) edge node[left] {} (G);
+\path [] (F) edge node[left] {} (H);
+\path [] (G) edge node[left] {} (H);
+\end{tikzpicture}
+\end{align*}
+
+The blocks are: $V(5, 10) $, $V(6,9,3)$, $V(1)$, $V(7)$, $V(11)$, $V(10,2,4,6,8)$
+\end{question}
+
+\begin{question}{5}
+	Give a formula for the number of spanning trees of G in terms of the number of spanning trees of its blocks.	\\
+	$\tau(G) = \sum{\tau(\text{Blocks})}$
+\end{question}
+
+\begin{question}{6}
+\end{question}
+
+\begin{question}{7}
+\end{question}
+
+\begin{question}{8}
+\end{question}
+
+\begin{question}{9}
+\end{question}
+
+\begin{question}{10}
+\end{question}
 
 
 % --------------------------------------------------------------
