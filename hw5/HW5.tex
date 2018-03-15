@@ -8,6 +8,8 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{tikz}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -51,17 +53,53 @@ $\kappa$: 4 \\
 $\kappa$':4 \\
 $\delta$: 4 \\
 4-connected? Yes \\
-4-edge-connected? Yes  \\ 
+4-edge-connected? Yes  \\
 The Other one \\
 $\kappa$: 2 \\
 $\kappa$':4 \\
 $\delta$: 4 \\
 4-connected? Yes \\
-4-edge-connected? Yes 
+4-edge-connected? Yes
 
 \begin{question}{2}
-Prove or disprove: In a simple graph, every closed even trail of length more than 3 contains an even cycle.
+For $k \leq n - 1$, prove that every simple $n$-vertex graph $G$ with $\delta(G) \geq (n+k-2)/2$ is $k$-connected.
 \end{question}
+
+PROOF BY INDUCTION: \\
+Start with $n$ = 1. Since $n = 1, k = 0$. A single node is $K_1$, and $K_1$ is $0$-connected by virtue of the $K$-graph rule. \\
+
+Increment $n$:
+As $n$ increases, so will $\delta$.  $\delta$ also increases. For $n = 2, k =0, \delta = \frac{2}{2}$.  The Harary graph $H_{2}{1}$, the graph with the fewest possible edges to achieve $\delta = k$ is 1-connected, therefore 0-connected.  $\delta$ will increase by 1 for every other increment of $k$. As $n$ increases, we build a Horary graph $H_{(n)(k)}$, which will be k-connected.  This will be the case for every $H_{(n)(k)}$.
+
+\begin{question}{3}
+($!$) Prove that the symmetric difference of two different edge cuts is an edge cut. (Hint: Draw a picture illustrating the two edge cuts and use it to guide the proof.)
+\end{question}
+
+\begin{question}{6}
+($-$) Determine$\kappa(u,v)$ and $\kappa`(u,v)$ in the graph drawn below. LOL I'M NOT DRAWING THAT. (Hint: Use the dual problemas to give short proofs of optimality)
+\end{question}
+
+\begin{question}{7}
+Prove that a simple graph $G$ is 2-connected if and only if for every triple $(x, y, z)$ of distinct vertices, $G$ has an $x, z$ path through $y$.
+\end{question}
+
+\begin{question}{8}
+Prove that if $\kappa(G) = k$ and diam($G) = d$, then $n(G) ≥ k(d − 1) + 2$ and $\alpha(G) ≥ \ceil[big]{d(1 + d)/2}$.
+\end{question}
+
+\begin{question}{9}
+In a network $N$, with source $s$ and sink $t$, prove that if there exists no directed ($s, t$)-path then the value of a maximum flow and the capacity of a minimum cut are both zero. (goal: short,
+elegant, correct proof)
+\end{question}
+
+\begin{question}{10}
+($-$) A kitchen sink draws water from two tanks according to the network of pipes with papacities per unit time shown below.  Find the maximum flow.  Prove that your answer is optimal by using the dual problem, nad explain why this proves optimality.
+\end{question}
+
+
+
+
+
 
 
 
