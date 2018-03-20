@@ -137,7 +137,7 @@ The blocks are: $V(5, 10) $, $V(6,9,3)$, $V(1)$, $V(7)$, $V(11)$, $V(10,2,4,6,8)
 \end{question}
 
 \begin{question}{6}
-($-$) Determine$\kappa(u,v)$ and $\kappa`(u,v)$ in the graph drawn below. LOL I'M NOT DRAWING THAT. (Hint: Use the dual problemas to give short proofs of optimality)
+($-$) Determine $\kappa(u,v)$ and $\kappa`(u,v)$ in the graph drawn below. LOL I'M NOT DRAWING THAT. (Hint: Use the dual problems to give short proofs of optimality)
 \end{question}
 
 \begin{question}{7}
@@ -157,21 +157,15 @@ Given a graph $G$ with diameter $d$, we can infer that there is a path with $d+1
 \end{question}
 
 \begin{question}{9}
-In a network $N$, with source $s$ and sink $t$, prove that if there exists no directed ($s, t$)-path then the value of a maximum flow and the capacity of a minimum cut are both zero. (goal: short,
-elegant, correct proof)
+In a network $N$, with source $s$ and sink $t$, prove that if there exists no directed ($s, t$)-path then the value of a maximum flow and the capacity of a minimum cut are both zero. (goal: short, elegant, correct proof) \\
+
+If we run the Ford-Fulkerson Algorithm on a graph with no directed (s,t)-path from source to sync, the algorithm will not find a f-augmenting path (since there is no way to reach t), it would return a [S,$\bar{S}$] edge cut with 0 capacity (since the algorithm is initialized with every flow(0)). Thus the maximum flow is also 0.
 \end{question}
-\color{red}
-\huge I DON'T EVEN KNOW HOW THIS HAPPENED TO NUMBER 10 BUT I'M TOO SCARED TO CHANGE IT:
-\normalsize \color{black}
 
 \begin{question}{10}
-($-$) A kitchen sink draws water from two tanks according to the network of pipes with papacities per unit time shown below.  Find the maximum flow.  Prove that your answer is optimal by using the dual problem, nad explain why this proves optimality.
+($-$) A kitchen sink draws water from two tanks according to the network of pipes with capacities per unit time shown below.  Find the maximum flow.  Prove that your answer is optimal by using the dual problem, and explain why this proves optimality.\\
 
-	If we run the Ford-Fulkerson Algorithm on a graph with no directed (s,t)-path from source to sync, the algorithm will not find a f-augmenting path (since there is no way to reach t), it would return a [S,$\bar{S}$] edge cut with 0 capacity (since the algorithm is initialized with every flow(0)). Thus the maximum flow is also 0. 
-\end{question}
-
-\begin{question}{10} Problem 4.3.3, text. \\
-	In every network, the maximum feasible flow is equivalent to the minimum capacity of a source/sink cut by Corollary 4.3.8. The maximum feasible flow in this case is 34, because the edge cut \{Tank1, Tank2, B\} and \{A, C, D, E, F\} produces the minimum capacity 34. Every other cut has a greater capacity. \\
+In every network, the maximum feasible flow is equivalent to the minimum capacity of a source/sink cut by Corollary 4.3.8. The maximum feasible flow in this case is 34, because the edge cut \{Tank1, Tank2, B\} and \{A, C, D, E, F\} produces the minimum capacity 34. Every other cut has a greater capacity. \\
 	
 \begin{tikzpicture}
 \tikzset{edge/.style = {->,> = latex'}}
