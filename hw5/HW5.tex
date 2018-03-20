@@ -71,7 +71,7 @@ PROOF BY INDUCTION: \\
 Start with $n$ = 1. Since $n = 1, k = 0$. A single node is $K_1$, and $K_1$ is $0$-connected by virtue of the $K$-graph rule. \\
 
 Increment $n$:
-As $n$ increases, so will $\delta$.  $\delta$ also increases. For $n = 2, k =0, \delta = \frac{2}{2}$.  The Harary graph $H_{2}{1}$, the graph with the fewest possible edges to achieve $\delta = k$ is 1-connected, therefore 0-connected.  $\delta$ will increase by 1 for every other increment of $k$. As $n$ increases, we build a Horary graph $H_{(n)(k)}$, which will be k-connected.  This will be the case for every $H_{(n)(k)}$.
+As $n$ increases, so will $\delta$.  $\delta$ also increases. For $n = 2, k =0, \delta = \frac{2}{2}$.  The Harary graph $H_{2}{1}$, the graph with the fewest possible edges to achieve $\delta = k$ is 1-connected, therefore 0-connected.  $\delta$ will increase by 1 for every other increment of $k$. As $n$ increases, we build a Harary graph $H_{(n)(k)}$, which will be k-connected.  This will be the case for every $H_{(n)(k)}$.
 
 \begin{question}{3}
 
@@ -147,7 +147,7 @@ Prove that a simple graph $G$ is 2-connected if and only if for every triple $(x
 \begin{question}{8}
 Prove that if $\kappa(G) = k$ and diam($G) = d$, then $n(G) \geq k(d$ - $ 1) + 2$ and $\alpha(G) \geq \ceil[big]{(1 + d)/2}$.
 \\
-Given graph $G$ with diameter $d$, there exsist two vertices $a$ and $b$ with a shortest path between them consisting of at most ($d$ - $1$) edges.  If $\kappa(G) = k$, then there exist $k$ vertex-disjoint paths between $a$ and $b$ of length $\geq (d$ - $1)$, since there cannot be a path shorter than $(d$ - $1)$ between $a$ and $b$, because that path would be the diameter.  These $k$ paths share points $a$ and $b$, adding 2 to the minimum number of vertices.  The end result is $n(G) \geq k(d$ -$1) +2$.  \\
+Given graph $G$ with diameter $d$, there exists two vertices $a$ and $b$ with a shortest path between them consisting of at most ($d$ - $1$) edges.  If $\kappa(G) = k$, then there exist $k$ vertex-disjoint paths between $a$ and $b$ of length $\geq (d$ - $1)$, since there cannot be a path shorter than $(d$ - $1)$ between $a$ and $b$, because that path would be the diameter.  These $k$ paths share points $a$ and $b$, adding 2 to the minimum number of vertices.  The end result is $n(G) \geq k(d$ -$1) +2$.  \\
 
 \noindent
 Given a graph $G$ with diameter $d$, we can infer that there is a path with $d+1$ vertices that created the diameter.  This path will be isomorphic to $P_{d+1}$.  The maximum independent set will have at least $\ceil[big]{(1 + d)/2}$ vertices on the diameter alone.  Any additional vertices can only increase the size of $\alpha$.
@@ -159,13 +159,13 @@ Given a graph $G$ with diameter $d$, we can infer that there is a path with $d+1
 \begin{question}{9}
 In a network $N$, with source $s$ and sink $t$, prove that if there exists no directed ($s, t$)-path then the value of a maximum flow and the capacity of a minimum cut are both zero. (goal: short, elegant, correct proof) \\
 
-If we run the Ford-Fulkerson Algorithm on a graph with no directed (s,t)-path from source to sync, the algorithm will not find a f-augmenting path (since there is no way to reach t), it would return a [S,$\bar{S}$] edge cut with 0 capacity (since the algorithm is initialized with every flow(0)). Thus the maximum flow is also 0.
+If we run the Ford-Fulkerson Algorithm on a graph with no directed (s,t)-path from source to sync, the algorithm will not find a f-augmenting path (since it can only reach t by using backwards edges whose value is the 0 flow), it would return a [S,$\bar{S}$] edge cut with 0 capacity (since the algorithm is initialized with every flow(0)). Thus the maximum flow is also 0.
 \end{question}
 
 \begin{question}{10}
 ($-$) A kitchen sink draws water from two tanks according to the network of pipes with capacities per unit time shown below.  Find the maximum flow.  Prove that your answer is optimal by using the dual problem, and explain why this proves optimality.\\
 
-In every network, the maximum feasible flow is equivalent to the minimum capacity of a source/sink cut by Corollary 4.3.8. The maximum feasible flow in this case is 34, because the edge cut \{Tank1, Tank2, B\} and \{A, C, D, E, F\} produces the minimum capacity 34. Every other cut has a greater capacity. \\
+%In every network, the maximum feasible flow is equivalent to the minimum capacity of a source/sink cut by Corollary 4.3.8. The maximum feasible flow in this case is 34, because the edge cut \{Tank1, Tank2, B\} and \{A, C, D, E, F\} produces the minimum capacity 34. Every other cut has a greater capacity. \\
 	
 \begin{tikzpicture}
 \tikzset{edge/.style = {->,> = latex'}}
