@@ -11,6 +11,8 @@
 \usepackage{mathtools}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
+\usetikzlibrary{arrows}
+
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 
@@ -72,7 +74,26 @@ Increment $n$:
 As $n$ increases, so will $\delta$.  $\delta$ also increases. For $n = 2, k =0, \delta = \frac{2}{2}$.  The Harary graph $H_{2}{1}$, the graph with the fewest possible edges to achieve $\delta = k$ is 1-connected, therefore 0-connected.  $\delta$ will increase by 1 for every other increment of $k$. As $n$ increases, we build a Horary graph $H_{(n)(k)}$, which will be k-connected.  This will be the case for every $H_{(n)(k)}$.
 
 \begin{question}{3}
+
 ($!$) Prove that the symmetric difference of two different edge cuts is an edge cut. (Hint: Draw a picture illustrating the two edge cuts and use it to guide the proof.)
+
+	4.1.28 Text \\
+	The symmetric difference of $[X,\bar{X}]$ and $[Y,\bar{Y}]$ is the edge cut \\
+	$[Z,\overline{Z}] = [(X \cap Y) \cup (\overline{X} \cap \overline{Y}), (X \cap \overline{Y}) \cup (\overline{X} \cap Y)]$\\
+	
+	An edge e is only in $[Z, \overline{Z}]$ if it is in exactly one of $[X,\overline{X}]$ or $[Y, \overline{Y}]$
+	
+	\begin{tikzpicture}
+	\draw (0,0) ellipse (2cm and 1cm);
+	\draw (0,2) ellipse (2cm and 1cm);
+	\draw[red] (-1,1) ellipse (1cm and 2cm);
+	\draw[red] (1,1) ellipse (1cm and 2cm);
+	\node at (-1,2){$(X \cap Y)$};
+	\node at (1,0){$(\overline{X} \cap \overline{Y})$};
+	\node at (1,2){$(X \cap \overline{Y})$};
+	\node at (-1,0){$(\overline{X} \cap Y)$};
+	\end{tikzpicture}
+	
 \end{question}
 
 \begin{question}{4}
@@ -139,9 +160,52 @@ Given a graph $G$ with diameter $d$, we can infer that there is a path with $d+1
 In a network $N$, with source $s$ and sink $t$, prove that if there exists no directed ($s, t$)-path then the value of a maximum flow and the capacity of a minimum cut are both zero. (goal: short,
 elegant, correct proof)
 \end{question}
+\color{red}
+\huge I DON'T EVEN KNOW HOW THIS HAPPENED TO NUMBER 10 BUT I'M TOO SCARED TO CHANGE IT:
+\normalsize \color{black}
 
 \begin{question}{10}
 ($-$) A kitchen sink draws water from two tanks according to the network of pipes with papacities per unit time shown below.  Find the maximum flow.  Prove that your answer is optimal by using the dual problem, nad explain why this proves optimality.
+
+	If we run the Ford-Fulkerson Algorithm on a graph with no directed (s,t)-path from source to sync, the algorithm will not find a f-augmenting path (since there is no way to reach t), it would return a [S,$\bar{S}$] edge cut with 0 capacity (since the algorithm is initialized with every flow(0)). Thus the maximum flow is also 0. 
+\end{question}
+
+\begin{question}{10} Problem 4.3.3, text. \\
+	In every network, the maximum feasible flow is equivalent to the minimum capacity of a source/sink cut by Corollary 4.3.8. The maximum feasible flow in this case is 34, because the edge cut \{Tank1, Tank2, B\} and \{A, C, D, E, F\} produces the minimum capacity 34. Every other cut has a greater capacity. \\
+	
+\begin{tikzpicture}
+\tikzset{edge/.style = {->,> = latex'}}
+
+\node[shape=circle,draw=black] (A) at (0,10) {Tank2};
+\node[shape=circle,draw=black] (B) at (0,2) {Tank1};
+\node[shape=circle,draw=black] (C) at (4,12) {A};
+\node[shape=circle,draw=black] (D) at (4,8) {B};
+\node[shape=circle,draw=black] (E) at (4,4) {C};
+\node[shape=circle,draw=black] (F) at (4,0) {D};
+\node[shape=circle,draw=black] (G) at (8,6) {E};
+\node[shape=circle,draw=black] (H) at (12,6) {F};
+
+\path [->] 
+
+(A)	edge[] node[left] {9 (9)} (C)
+(A) edge[] node[left] {12 (10)} (D)
+(B) edge[] node[left] {10 (10)} (E)
+(B) edge[] node[left] {5 (5)} (F)
+(C) edge[] node[left] {3 (0)} (D)
+(D) edge[] node[left] {5 (5)} (E)
+(E) edge[] node[left] {4 (3)} (F)
+(C) edge[bend left=10] node[right] {25 (0)} (G)
+(G) edge[bend left=10] node[left] {25 (18)} (C)
+(D) edge[] node[left] {5 (5)} (G)
+(E) edge[] node[left] {12 (12)} (G)
+(F) edge[bend left=10] node[left] {3 (1)} (G)
+(G) edge[bend left=10] node[right] {3 (0)} (F)
+(C) edge[] node[right] {40 (27)} (H)
+(F) edge[] node[right] {7 (7)} (H)
+;
+
+\end{tikzpicture}
+
 \end{question}
 
 
