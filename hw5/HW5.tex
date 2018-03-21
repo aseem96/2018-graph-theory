@@ -77,7 +77,6 @@ As $n$ increases, so will $\delta$.  $\delta$ also increases. For $n = 2, k =0, 
 
 ($!$) Prove that the symmetric difference of two different edge cuts is an edge cut. (Hint: Draw a picture illustrating the two edge cuts and use it to guide the proof.)
 
-	4.1.28 Text \\
 	The symmetric difference of $[X,\bar{X}]$ and $[Y,\bar{Y}]$ is the edge cut \\
 	$[Z,\overline{Z}] = [(X \cap Y) \cup (\overline{X} \cap \overline{Y}), (X \cap \overline{Y}) \cup (\overline{X} \cap Y)]$\\
 	
@@ -133,7 +132,9 @@ The blocks are: $V(5, 10) $, $V(6,9,3)$, $V(1)$, $V(7)$, $V(11)$, $V(10,2,4,6,8)
 
 \begin{question}{5}
 	Give a formula for the number of spanning trees of G in terms of the number of spanning trees of its blocks.	\\
-	$\tau(G) = \prod{\tau(\text{Blocks})}$\\
+	Let G be a connected graph that can be decomposed into $n$ Blocks $B_n$. The number of spanning trees in G is the product of the number of spanning trees in all it's blocks: \\
+
+	$\tau(G) = \prod_{i=1}^{n}\tau(B_i)$\\
 	This is because:\\
 	- The graph can be decomposed into its blocks\\
 	- Any combination of spanning trees of all blocks will still leave the resultant graph (now a spanning tree) connected, as long as the original graph is connected.
@@ -230,13 +231,13 @@ Given a graph $G$ with diameter $d$, we can infer that there is a path with $d+1
 \begin{question}{9}
 In a network $N$, with source $s$ and sink $t$, prove that if there exists no directed ($s, t$)-path then the value of a maximum flow and the capacity of a minimum cut are both zero. (goal: short, elegant, correct proof) \\
 
-If we run the Ford-Fulkerson Algorithm on a graph with no directed (s,t)-path from source to sync, the algorithm will not find a f-augmenting path (since it can only reach t by using backwards edges whose value is the 0 flow), it would return a [S,$\bar{S}$] edge cut with 0 capacity (since the algorithm is initialized with every flow(0)). Thus the maximum flow is also 0.
+If we run the Ford-Fulkerson Algorithm on a graph with no directed (s,t)-path from source to sync, the algorithm will not find a f-augmenting path (since it can only reach t by using backwards edges whose value is the 0 flow), it would return a [S,$\bar{S}$] edge cut with 0 capacity for all the backwards edges from t,(since the algorithm is initialized with every flow(0)). Thus the maximum flow is also 0.
 \end{question}
 
 \begin{question}{10}
 ($-$) A kitchen sink draws water from two tanks according to the network of pipes with capacities per unit time shown below.  Find the maximum flow.  Prove that your answer is optimal by using the dual problem, and explain why this proves optimality.\\
 
-%In every network, the maximum feasible flow is equivalent to the minimum capacity of a source/sink cut by Corollary 4.3.8. The maximum feasible flow in this case is 34, because the edge cut \{Tank1, Tank2, B\} and \{A, C, D, E, F\} produces the minimum capacity 34. Every other cut has a greater capacity. \\
+In every network, the maximum feasible flow is equivalent to the minimum capacity of a source/sink cut by Corollary 4.3.8. The maximum feasible flow in this case is 34, because the edge cut \{Tank1, Tank2, B\} and \{A, C, D, E, F\} produces the minimum capacity 34. Every other cut has a greater capacity, and all edge from \{Tank1, Tank2, B\} to  \{A, C, D, E, F\} have excess capacity, and no edge from  \{A, C, D, E, F\} to \{Tank1, Tank2, B\}  has nonzero flow, this must be the maximum flow possible.\\
 	
 \begin{tikzpicture}
 \tikzset{edge/.style = {->,> = latex'}}
