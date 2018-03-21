@@ -212,7 +212,18 @@ In other words, all $u-v$ paths must contain at least one of $AF, BF, EH, CG$ or
 \begin{question}{7}
 Prove that a simple graph $G$ is 2-connected if and only if for every triple $(x, y, z)$ of distinct vertices, $G$ has an $x, z$ path through $y$. \\
 
-Assume there is a graph $G$ that is two-connected, but does not have a path connecting vertices $x$ and $y$, creating a triple $(x, y, z)$ that does not have an $x, z$ path through $y$.  To maintain graph connectivity, there must exist a path from $x$ to $y$.  This path cannot contain any continuation that contains $z$, so $y$ must have a degree of 1, thus contradicting that this graph is 2-connected.
+\noindent
+$\implies$ (proof by contradiction)\\
+Let us assume that there exists a triple $(x, y, z)$ in a 2-connected graph G, such that there is no $x, z$ path through $y$.\\
+This must mean that there exists an intermediate vertex $v$ such that the $x, y$ and $z, y$ paths (which must still exist, since G is connected) converge at $v$  and follow a common path to $y$ thereon.\\
+However, this would mean that removal of a single vertex from the $v, y$ path would cease to connect $y$ to $x$ or $z$, which violates the given fact that G is 2-connected.\\
+This implies that there must be vertex-disjoint paths $(x, y)$ and $z, y$ which, in other words implies that for every triple $(x, y, z)$ of distinct vertices, $G$ has an $x, z$ path through $y$.\\
+\\
+$\impliedby$ (proof by induction)\\
+Let us first verify this for the base case, which is $C_3$. It is easily seen that there exists a path between every pair of vertices through the third vertex.\\
+In the induction step, assume we already have a 2-connected graph G for which every triple $(x, y, z)$ of distinct vertices, $G$ has an $x, z$ path through $y$.\\
+To add a vertex $v$ to G in such a manner that the latter still holds true, it needs to be adjacent to at least two other vertices (as is true for the base case).\\
+Removal of any of one these vertices still leaves the graph connected to $v$ (we needn't worry about connectivity to other vertices since we already assumed a 2-connected graph in the induction step), which means that the addition of $v$ would still maintain the 2-connectivity of G.
 \end{question}
 
 \begin{question}{8}
