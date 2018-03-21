@@ -141,7 +141,9 @@ The blocks are: $V(5, 10) $, $V(6,9,3)$, $V(1)$, $V(7)$, $V(11)$, $V(10,2,4,6,8)
 \end{question}
 
 \begin{question}{7}
-Prove that a simple graph $G$ is 2-connected if and only if for every triple $(x, y, z)$ of distinct vertices, $G$ has an $x, z$ path through $y$.
+Prove that a simple graph $G$ is 2-connected if and only if for every triple $(x, y, z)$ of distinct vertices, $G$ has an $x, z$ path through $y$. \\
+
+Assume there is a graph $G$ that is two-connected, but does not have a path connecting vertices $x$ and $y$, creating a triple $(x, y, z)$ that does not have an $x, z$ path through $y$.  To maintain graph connectivity, there must exist a path from $x$ to $y$.  This path cannot contain any continuation that contains $z$, so $y$ must have a degree of 1, thus contradicting that this graph is 2-connected.
 \end{question}
 
 \begin{question}{8}
@@ -150,7 +152,7 @@ Prove that if $\kappa(G) = k$ and diam($G) = d$, then $n(G) \geq k(d$ - $ 1) + 2
 Given graph $G$ with diameter $d$, there exists two vertices $a$ and $b$ with a shortest path between them consisting of at most ($d$ - $1$) edges.  If $\kappa(G) = k$, then there exist $k$ vertex-disjoint paths between $a$ and $b$ of length $\geq (d$ - $1)$, since there cannot be a path shorter than $(d$ - $1)$ between $a$ and $b$, because that path would be the diameter.  These $k$ paths share points $a$ and $b$, adding 2 to the minimum number of vertices.  The end result is $n(G) \geq k(d$ -$1) +2$.  \\
 
 \noindent
-Given a graph $G$ with diameter $d$, we can infer that there is a path with $d+1$ vertices that created the diameter.  This path will be isomorphic to $P_{d+1}$.  The maximum independent set will have at least $\ceil[big]{(1 + d)/2}$ vertices on the diameter alone.  Any additional vertices can only increase the size of $\alpha$.
+Given a graph $G$ with diameter $d$, we can infer that there is a path with $d+1$ vertices that created the diameter.  This path will be isomorphic to $P_{d+1}$.  The maximum independent set will have $\ceil[big]{(1 + d)/2}$ vertices on the diameter alone.  Any additional vertices can only increase the size of $\alpha$.
 
 
 
