@@ -133,11 +133,80 @@ The blocks are: $V(5, 10) $, $V(6,9,3)$, $V(1)$, $V(7)$, $V(11)$, $V(10,2,4,6,8)
 
 \begin{question}{5}
 	Give a formula for the number of spanning trees of G in terms of the number of spanning trees of its blocks.	\\
-	$\tau(G) = \prod{\tau(\text{Blocks})}$
+	$\tau(G) = \prod{\tau(\text{Blocks})}$\\
+	This is because:\\
+	- The graph can be decomposed into its blocks\\
+	- Any combination of spanning trees of all blocks will still leave the resultant graph (now a spanning tree) connected, as long as the original graph is connected.
 \end{question}
 
 \begin{question}{6}
-($-$) Determine $\kappa(u,v)$ and $\kappa`(u,v)$ in the graph drawn below. LOL I'M NOT DRAWING THAT. (Hint: Use the dual problems to give short proofs of optimality)
+($-$) Determine $\kappa(u,v)$ and $\kappa`(u,v)$ in the graph drawn below. (Hint: Use the dual problems to give short proofs of optimality)
+
+\begin{tikzpicture}
+\tikzset{edge/.style = {->,> = latex'}}
+
+\node[shape=circle,draw=black] (U) at (0,3) {U};
+\node[shape=circle,draw=black] (A) at (3,6) {A};
+\node[shape=circle,draw=black] (B) at (3,4) {B};
+\node[shape=circle,draw=black] (C) at (3,2) {C};
+\node[shape=circle,draw=black] (D) at (3,0) {D};
+\node[shape=circle,draw=black] (E) at (6,3) {E};
+\node[shape=circle,draw=black] (F) at (7,5) {F};
+\node[shape=circle,draw=black] (G) at (7,1) {G};
+\node[shape=circle,draw=black] (H) at (8,3) {H};
+\node[shape=circle,draw=black] (I) at (11,6) {I};
+\node[shape=circle,draw=black] (J) at (11,4) {J};
+\node[shape=circle,draw=black] (K) at (11,2) {K};
+\node[shape=circle,draw=black] (L) at (11,0) {L};
+\node[shape=circle,draw=black] (V) at (14,3) {V};
+
+\path [] (U) edge node[left] {} (A);
+\path [] (U) edge [bend left=20] node[left] {b1} (B);
+\path [] (U) edge [bend right=20] node[left] {b2} (B);
+\path [] (U) edge [bend left=20] node[left] {c1} (C);
+\path [] (U) edge [bend right=20] node[left] {c2} (C);
+\path [] (U) edge node[left] {} (D);
+\path [] (A) edge node[left] {} (F);
+\path [] (B) edge node[left] {} (F);
+\path [] (B) edge node[left] {} (E);
+\path [] (C) edge node[left] {} (E);
+\path [] (C) edge node[left] {} (G);
+\path [] (D) edge node[left] {} (G);
+\path [] (E) edge node[left] {} (H);
+\path [] (F) edge node[left] {} (I);
+\path [] (F) edge node[left] {} (J);
+\path [] (G) edge node[left] {} (K);
+\path [] (G) edge node[left] {} (L);
+\path [] (H) edge node[left] {} (J);
+\path [] (H) edge node[left] {} (K);
+\path [] (I) edge node[left] {} (V);
+\path [] (J) edge [bend left=20] node[left] {j1} (V);
+\path [] (J) edge [bend right=20] node[left] {j2} (V);
+\path [] (K) edge [bend left=20] node[left] {k1} (V);
+\path [] (K) edge [bend right=20] node[left] {k2} (V);
+\path [] (L) edge node[left] {} (V);
+\end{tikzpicture}
+\\
+For the given graph (with nodes and some edges annotated for convenience):\\
+\\
+$\kappa(u, v) = 3$\\
+For proof of optimality, we could use the duality:\\
+$\kappa(u, v) = $ number of vertex-disjoint paths between $u$ and $v$, which are the following:\\
+$u-A-F-I-v$\\
+$u-B-E-H-J-v$\\
+$u-C-G-K-v$\\
+In other words, all $u-v$ paths must contain at least one of F, E or G.\\
+\\
+$\kappa'(u, v) = 5$\\
+For proof of optimality, we could use the duality:\\
+$\kappa'(u, v) = $ number of edge-disjoint paths between $u$ and $v$, which are the following:\\
+$uA-AF-FI-Iv$\\
+$b1-BF-FJ-j1$\\
+$b2-BE-EH-HJ-j2$\\
+$c1-CG-GK-k1$\\
+$uD-DG-GL-Lv$\\
+In other words, all $u-v$ paths must contain at least one of $AF, BF, EH, CG$ or $DG$.\\
+
 \end{question}
 
 \begin{question}{7}
