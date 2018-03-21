@@ -67,11 +67,6 @@ $\delta$: 4 \\
 For $k \leq n - 1$, prove that every simple $n$-vertex graph $G$ with $\delta(G) \geq (n+k-2)/2$ is $k$-connected.
 \end{question}
 
-PROOF BY INDUCTION: \\
-Start with $n$ = 1. Since $n = 1, k = 0$. A single node is $K_1$, and $K_1$ is $0$-connected by virtue of the $K$-graph rule. \\
-
-Increment $n$:
-As $n$ increases, so will $\delta$.  $\delta$ also increases. For $n = 2, k =0, \delta = \frac{2}{2}$.  The Harary graph $H_{2}{1}$, the graph with the fewest possible edges to achieve $\delta = k$ is 1-connected, therefore 0-connected.  $\delta$ will increase by 1 for every other increment of $k$. As $n$ increases, we build a Harary graph $H_{(n)(k)}$, which will be k-connected.  This will be the case for every $H_{(n)(k)}$.
 
 \begin{question}{3}
 
@@ -237,7 +232,7 @@ If we run the Ford-Fulkerson Algorithm on a graph with no directed (s,t)-path fr
 \begin{question}{10}
 ($-$) A kitchen sink draws water from two tanks according to the network of pipes with capacities per unit time shown below.  Find the maximum flow.  Prove that your answer is optimal by using the dual problem, and explain why this proves optimality.\\
 
-In every network, the maximum feasible flow is equivalent to the minimum capacity of a source/sink cut by Corollary 4.3.8. The maximum feasible flow in this case is 34, because the edge cut \{Tank1, Tank2, B\} and \{A, C, D, E, F\} produces the minimum capacity 34. Every other cut has a greater capacity, and all edge from \{Tank1, Tank2, B\} to  \{A, C, D, E, F\} have excess capacity, and no edge from  \{A, C, D, E, F\} to \{Tank1, Tank2, B\}  has nonzero flow, this must be the maximum flow possible.\\
+In every network, the maximum feasible flow is equivalent to the minimum capacity of a source/sink cut by Corollary 4.3.8. The maximum feasible flow in this case is 34, because the edge cut \{Tank1, Tank2, B\} and \{A, C, D, E, F\} produces the minimum capacity 34. Every other cut has a greater capacity, and no edges from \{Tank1, Tank2, B\} to  \{A, C, D, E, F\} have excess capacity, and no edges from  \{A, C, D, E, F\} to \{Tank1, Tank2, B\}  have nonzero flow, this must be the maximum flow possible.\\
 	
 \begin{tikzpicture}
 \tikzset{edge/.style = {->,> = latex'}}
