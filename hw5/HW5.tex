@@ -9,6 +9,10 @@
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{tikz}
 \usepackage{mathtools}
+
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
 \usetikzlibrary{arrows}
@@ -50,18 +54,46 @@ Problem 4.1.8, text. For each $k$, which graphs are $k$-connected? Which are $k$
 \end{question}
 
 \noindent
-The Hexagon \\
+
+\begin{center}
+\includegraphics[scale=.65]{hexagon}
+
+\begin{tabular}{l}
 $\kappa$: 4 \\
 $\kappa$':4 \\
 $\delta$: 4 \\
-4-connected? Yes \\
-4-edge-connected? Yes  \\
-The Other one \\
+
+\end{tabular} \\
+\begin{tabular}{|c|c|c|}\hline
+k & k-connected & k-edge connected \\ \hline
+1 & Yes & Yes \\ \hline
+2 & Yes & Yes \\ \hline
+3 & Yes & Yes \\ \hline
+4 & Yes & Yes \\ \hline
+$\geq$5 & No & No \\ \hline
+\end{tabular}
+
+
+
+\clearpage
+\includegraphics[scale=.65]{bigOne}\\
+
 $\kappa$: 2 \\
 $\kappa$':4 \\
 $\delta$: 4 \\
-4-connected? Yes \\
-4-edge-connected? Yes
+
+\begin{tabular}{|c|c|c|}\hline
+k & k-connected & k-edge connected \\ \hline
+1 & Yes & Yes \\ \hline
+2 & Yes & Yes \\ \hline
+3 & No & Yes \\ \hline
+4 & No & Yes \\ \hline
+$\geq$5 & No & No \\ \hline
+\end{tabular}
+
+
+\end{center}
+
 
 \begin{question}{2}
 For $k \leq n - 1$, prove that every simple $n$-vertex graph $G$ with $\delta(G) \geq (n+k-2)/2$ is $k$-connected.
@@ -227,7 +259,7 @@ Assume there is a graph $G$ that is two-connected, but does not have a path conn
 \begin{question}{8}
 Prove that if $\kappa(G) = k$ and diam($G) = d$, then $n(G) \geq k(d$ - $ 1) + 2$ and $\alpha(G) \geq \ceil[big]{(1 + d)/2}$.
 \\
-Given graph $G$ with diameter $d$, there exists two vertices $a$ and $b$ with a shortest path between them consisting of at most ($d$ - $1$) edges.  If $\kappa(G) = k$, then there exist $k$ vertex-disjoint paths between $a$ and $b$ of length $\geq (d$ - $1)$, since there cannot be a path shorter than $(d$ - $1)$ between $a$ and $b$, because that path would be the diameter.  These $k$ paths share points $a$ and $b$, adding 2 to the minimum number of vertices.  The end result is $n(G) \geq k(d$ -$1) +2$.  \\
+Given graph $G$ with diameter $d$, there exist two vertices $a$ and $b$ with a shortest path between them consisting of at most ($d$ - $1$) edges.  If $\kappa(G) = k$, then there exist $k$ vertex-disjoint paths between $a$ and $b$ of length $\geq (d$ - $1)$, since there cannot be a path shorter than $(d$ - $1)$ between $a$ and $b$, because that path would be the diameter.  These $k$ paths share points $a$ and $b$, adding 2 to the minimum number of vertices.  The end result is $n(G) \geq k(d$ -$1) +2$.  \\
 
 \noindent
 Given a graph $G$ with diameter $d$, we can infer that there is a path with $d+1$ vertices that created the diameter.  This path will be isomorphic to $P_{d+1}$.  The maximum independent set will have $\ceil[big]{(1 + d)/2}$ vertices on the diameter alone.  Any additional vertices can only increase the size of $\alpha$.
