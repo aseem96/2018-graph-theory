@@ -72,11 +72,24 @@ For $k \leq n - 1$, prove that every simple $n$-vertex graph $G$ with $\delta(G)
 
 ($!$) Prove that the symmetric difference of two different edge cuts is an edge cut. (Hint: Draw a picture illustrating the two edge cuts and use it to guide the proof.)
 
-	The symmetric difference of $[X,\bar{X}]$ and $[Y,\bar{Y}]$ is the edge cut \\
-	$[Z,\overline{Z}] = [(X \cap Y) \cup (\overline{X} \cap \overline{Y}), (X \cap \overline{Y}) \cup (\overline{X} \cap Y)]$\\
+Let A be the edge cut of  $[X,\bar{X}]$ and B be the edge cut of $[Y,\bar{Y}]$. The symmetric difference of $A \Delta B$ is $(X \cup Y) - (X \cap Y)$. 
+
+This can be shown in 4 cases: \\
+1. An edge in A but not in B.
+
+	In this case $e \in (X \cup Y)$ and $e \notin (X \cap Y)$ Thus $e \in \delta((X \cup Y) - (X \cap Y))$\\	
+2. An edge in B but not in A
+
+	In this case $e \in (X \cup Y)$ and $e \notin (X \cap Y)$ Thus $e \in \delta((X \cup Y) - (X \cap Y))$\\	
+3. An edge in A and in B
+
+	In this case $e \in (X \cup Y)$ and $e \in (X \cap Y)$ Thus $e \notin \delta((X \cup Y) - (X \cap Y))$\\	
+4. An edge not in A or B
+
+	In this case $e \notin (X \cup Y)$ and $e \notin (X \cap Y)$ Thus $e \notin \delta((X \cup Y) - (X \cap Y))$\\	
 	
-	An edge e is only in $[Z, \overline{Z}]$ if it is in exactly one of $[X,\overline{X}]$ or $[Y, \overline{Y}]$
-	
+So $[(X \cup Y) - (X \cap Y), \overline{(X \cup Y) - (X \cap Y)}]$ is the resulting symmetric difference.
+
 	\begin{tikzpicture}
 	\draw (0,0) ellipse (2cm and 1cm);
 	\draw (0,2) ellipse (2cm and 1cm);
