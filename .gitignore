@@ -22,7 +22,7 @@
 # these rules might exclude image files for figures etc.
 # *.ps
 # *.eps
-# *.pdf
+*.pdf
 
 ## Generated if empty string is given at "Please type another file name for output:"
 .pdf
@@ -231,9 +231,3 @@ TSWLatexianTemp*
 # OSX things to exclude:
 
 .DS_Store
-hw3/hw3.pdf
-hw4/h4w.pdf
-hw5/HW5.pdf
-hw6/hw6.pdf
-hw7/hw7.pdf
-hw8/hw8.pdf
