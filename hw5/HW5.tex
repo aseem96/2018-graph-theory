@@ -291,7 +291,7 @@ Given a graph $G$ with diameter $d$, we can infer that there is a path with $d+1
 \begin{question}{9}
 In a network $N$, with source $s$ and sink $t$, prove that if there exists no directed ($s, t$)-path then the value of a maximum flow and the capacity of a minimum cut are both zero. (goal: short, elegant, correct proof) \\
 
-If we run the Ford-Fulkerson Algorithm on a graph with no directed (s,t)-path from source to sync, the algorithm will not find a f-augmenting path (since it can only reach t by using backwards edges whose value is the 0 flow), it would return a [S,$\bar{S}$] edge cut with 0 capacity for all the backwards edges from t,(since the algorithm is initialized with every flow(0)). Thus the maximum flow is also 0. \\
+If we run the Ford-Fulkerson Algorithm on a graph with no directed (s,t)-path from source to sink, the algorithm will not find a f-augmenting path (since it can only reach t by using backwards edges whose value is the 0 flow), it would return a [S,$\bar{S}$] edge cut with 0 capacity for all the backwards edges from t,(since the algorithm is initialized with every flow(0)). Thus the maximum flow is also 0. \\
 \end{question}
 
 \begin{question}{10}
