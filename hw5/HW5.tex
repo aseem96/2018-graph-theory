@@ -91,18 +91,25 @@ k & k-connected & k-edge connected \\ \hline
 $\geq$5 & No & No \\ \hline
 \end{tabular}
 
-
 \end{center}
 
 
 \begin{question}{2}
-For $k \leq n - 1$, prove that every simple $n$-vertex graph $G$ with $\delta(G) \geq (n+k-2)/2$ is $k$-connected.
+For $k \leq n - 1$, prove that every simple $n$-vertex graph $G$ with $\delta(G) \geq (n+k-2)/2$ is $k$-connected. \\
+
+Proof by contradiction: \\
+Let us assume that that $G$ is not k-connected. We have $n > k$, this means that there is a set $T \subseteq V(G)$ such that $|S|= k-1$ and $G-T$ is disconnected. Then, $G-T$ has $n-k+1$ vertices. \\
+Let $H$ be the smallest component of $G$. Since $G$ has n vertices and $T$ has $k-1$ vertices, $G$ has $n-k+1$ vertices. Since $G-T$ is disconnected, it has at least two components. Therefore, $H$ contains atleast $(n-k+1)/2$ vertices. \\
+Now. consider a vertex $v$ in $H$. $v$ is joined only to other vertices in $H$ and $T$. Therefore we have, \\
+$deg(v) \leq ((n-k+1)/2)-1+(k-1) \leq (n+k-3)/2 \leq (n+k-2)/2 \leq \delta(G)$, which is a contradiction.
+Hence, G has to k-connected. \\
+
 \end{question}
 
 
 \begin{question}{3}
 
-($!$) Prove that the symmetric difference of two different edge cuts is an edge cut. (Hint: Draw a picture illustrating the two edge cuts and use it to guide the proof.)
+($!$) Prove that the symmetric difference of two different edge cuts is an edge cut. (Hint: Draw a picture illustrating the two edge cuts and use it to guide the proof.) \\
 
 Let A be the edge cut of  $[X,\bar{X}]$ and B be the edge cut of $[Y,\bar{Y}]$. The symmetric difference of $A \Delta B$ is $(X \cup Y) - (X \cap Y)$. 
 
@@ -132,7 +139,7 @@ So $[(X \cup Y) - (X \cap Y), \overline{(X \cup Y) - (X \cap Y)}]$ is the result
 	\node at (1,2){$(X \cap \overline{Y})$};
 	\node at (-1,0){$(\overline{X} \cap Y)$};
 	\end{tikzpicture}
-	
+	\\
 \end{question}
 
 \begin{question}{4}
@@ -167,17 +174,17 @@ So $[(X \cup Y) - (X \cap Y), \overline{(X \cup Y) - (X \cap Y)}]$ is the result
 \end{tikzpicture}
 \end{align*}
 
-The blocks are: $V(5, 10) $, $V(6,9,3)$, $V(1)$, $V(7)$, $V(11)$, $V(10,2,4,6,8)$
+The blocks are: $V(5, 10) $, $V(6,9,3)$, $V(1)$, $V(7)$, $V(11)$, $V(10,2,4,6,8)$ \\
 \end{question}
 
 \begin{question}{5}
-	Give a formula for the number of spanning trees of G in terms of the number of spanning trees of its blocks.	\\
+	Give a formula for the number of spanning trees of G in terms of the number of spanning trees of its blocks.	\\ \\
 	Let G be a connected graph that can be decomposed into $n$ Blocks $B_n$. The number of spanning trees in G is the product of the number of spanning trees in all it's blocks: \\
 
 	$\tau(G) = \prod_{i=1}^{n}\tau(B_i)$\\
 	This is because:\\
 	- The graph can be decomposed into its blocks\\
-	- Any combination of spanning trees of all blocks will still leave the resultant graph (now a spanning tree) connected, as long as the original graph is connected.
+	- Any combination of spanning trees of all blocks will still leave the resultant graph (now a spanning tree) connected, as long as the original graph is connected. \\
 \end{question}
 
 \begin{question}{6}
@@ -227,7 +234,7 @@ The blocks are: $V(5, 10) $, $V(6,9,3)$, $V(1)$, $V(7)$, $V(11)$, $V(10,2,4,6,8)
 \path [] (K) edge [bend right=20] node[left] {k2} (V);
 \path [] (L) edge node[left] {} (V);
 \end{tikzpicture}
-\\
+\\ \\
 For the given graph (with nodes and some edges annotated for convenience):\\
 \\
 $\kappa(u, v) = 3$\\
@@ -246,7 +253,7 @@ $b1-BF-FJ-j1$\\
 $b2-BE-EH-HJ-j2$\\
 $c1-CG-GK-k1$\\
 $uD-DG-GL-Lv$\\
-In other words, all $u-v$ paths must contain at least one of $AF, BF, EH, CG$ or $DG$.\\
+In other words, all $u-v$ paths must contain at least one of $AF, BF, EH, CG$ or $DG$.\\ \\
 
 \end{question}
 
@@ -264,7 +271,7 @@ $\impliedby$ (proof by induction)\\
 Let us first verify this for the base case, which is $C_3$. It is easily seen that there exists a path between every pair of vertices through the third vertex.\\
 In the induction step, assume we already have a 2-connected graph G for which every triple $(x, y, z)$ of distinct vertices, $G$ has an $x, z$ path through $y$.\\
 To add a vertex $v$ to G in such a manner that the latter still holds true, it needs to be adjacent to at least two other vertices (as is true for the base case).\\
-Removal of any of one these vertices still leaves the graph connected to $v$ (we needn't worry about connectivity to other vertices since we already assumed a 2-connected graph in the induction step), which means that the addition of $v$ would still maintain the 2-connectivity of G.
+Removal of any of one these vertices still leaves the graph connected to $v$ (we needn't worry about connectivity to other vertices since we already assumed a 2-connected graph in the induction step), which means that the addition of $v$ would still maintain the 2-connectivity of G. \\
 \end{question}
 
 \begin{question}{8}
@@ -275,7 +282,7 @@ Given graph $G$ with diameter $d$, the \textit{minimum} path length between any 
 If $\kappa(G) = k$, then there exist $k$ vertex-disjoint paths between $a$ and $b$ of length $\geq d$. All these path share the same start and end vertex so we can express the number of vertices of $V(G)-\{a,b\}$ as $\geq k(d-1)$. So the number of vertices in $G$ must be $n(G) \geq k(d$ -$1) +2$\\
 
 
-Given a graph $G$ with diameter $d$, we can infer that there is a path with $d+1$ vertices that created the diameter.  This path will be isomorphic to $P_{d+1}$.  The maximum independent set will have $\ceil[big]{(1 + d)/2}$ vertices on the diameter alone.  Any additional vertices can only increase the size of $\alpha$.
+Given a graph $G$ with diameter $d$, we can infer that there is a path with $d+1$ vertices that created the diameter.  This path will be isomorphic to $P_{d+1}$.  The maximum independent set will have $\ceil[big]{(1 + d)/2}$ vertices on the diameter alone.  Any additional vertices can only increase the size of $\alpha$. \\
 
 
 
@@ -284,7 +291,7 @@ Given a graph $G$ with diameter $d$, we can infer that there is a path with $d+1
 \begin{question}{9}
 In a network $N$, with source $s$ and sink $t$, prove that if there exists no directed ($s, t$)-path then the value of a maximum flow and the capacity of a minimum cut are both zero. (goal: short, elegant, correct proof) \\
 
-If we run the Ford-Fulkerson Algorithm on a graph with no directed (s,t)-path from source to sync, the algorithm will not find a f-augmenting path (since it can only reach t by using backwards edges whose value is the 0 flow), it would return a [S,$\bar{S}$] edge cut with 0 capacity for all the backwards edges from t,(since the algorithm is initialized with every flow(0)). Thus the maximum flow is also 0.
+If we run the Ford-Fulkerson Algorithm on a graph with no directed (s,t)-path from source to sync, the algorithm will not find a f-augmenting path (since it can only reach t by using backwards edges whose value is the 0 flow), it would return a [S,$\bar{S}$] edge cut with 0 capacity for all the backwards edges from t,(since the algorithm is initialized with every flow(0)). Thus the maximum flow is also 0. \\
 \end{question}
 
 \begin{question}{10}
