@@ -99,7 +99,7 @@ For $k \leq n - 1$, prove that every simple $n$-vertex graph $G$ with $\delta(G)
 
 Proof by contradiction: \\
 Let us assume that that $G$ is not k-connected. We have $n > k$, this means that there is a set $T \subseteq V(G)$ such that $|S|= k-1$ and $G-T$ is disconnected. Then, $G-T$ has $n-k+1$ vertices. \\
-Let $H$ be the smallest component of $G$. Since $G$ has n vertices and $T$ has $k-1$ vertices, $G$ has $n-k+1$ vertices. Since $G-T$ is disconnected, it has at least two components. Therefore, $H$ contains atleast $(n-k+1)/2$ vertices. \\
+Let $H$ be the smallest component of $G$. Since $G-T$ is disconnected, it has at least two components. Therefore, $H$ contains atleast $(n-k+1)/2$ vertices. \\
 Now. consider a vertex $v$ in $H$. $v$ is joined only to other vertices in $H$ and $T$. Therefore we have, \\
 $deg(v) \leq ((n-k+1)/2)-1+(k-1) \leq (n+k-3)/2 \leq (n+k-2)/2 \leq \delta(G)$, which is a contradiction.
 Hence, G has to k-connected. \\
