@@ -268,9 +268,11 @@ Removal of any of one these vertices still leaves the graph connected to $v$ (we
 \end{question}
 
 \begin{question}{8}
-Prove that if $\kappa(G) = k$ and diam($G) = d$, then $n(G) \geq k(d$ - $ 1) + 2$ and $\alpha(G) \geq \ceil[big]{(1 + d)/2}$.
-\\
-Given graph $G$ with diameter $d$, there exist two vertices $a$ and $b$ with a shortest path between them consisting of at most ($d$ - $1$) edges.  If $\kappa(G) = k$, then there exist $k$ vertex-disjoint paths between $a$ and $b$ of length $\geq (d$ - $1)$, since there cannot be a path shorter than $(d$ - $1)$ between $a$ and $b$, because that path would be the diameter.  These $k$ paths share points $a$ and $b$, adding 2 to the minimum number of vertices.  The end result is $n(G) \geq k(d$ -$1) +2$.  \\
+Prove that if $\kappa(G) = k$ and diam($G) = d$, then $n(G) \geq k(d$ - $ 1) + 2$ and $\alpha(G) \geq \ceil[big]{(1 + d)/2}$.\\
+
+Given graph $G$ with diameter $d$, the \textit{minimum} path length between any two vertices $a$ and $b$ is at \textit{most} $d$ (by definition of diameter). Any path with length $d$ must have $d+1$ vertices on the path.\\
+
+If $\kappa(G) = k$, then there exist $k$ vertex-disjoint paths between $a$ and $b$ of length $\geq d$. All these path share the same start and end vertex so we can express the number of vertices of $V(G)-\{a,b\}$ as $\geq k(d-1)$. So the number of vertices in $G$ must be $n(G) \geq k(d$ -$1) +2$\\
 
 \noindent
 Given a graph $G$ with diameter $d$, we can infer that there is a path with $d+1$ vertices that created the diameter.  This path will be isomorphic to $P_{d+1}$.  The maximum independent set will have $\ceil[big]{(1 + d)/2}$ vertices on the diameter alone.  Any additional vertices can only increase the size of $\alpha$.
