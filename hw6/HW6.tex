@@ -14,6 +14,7 @@
 \graphicspath{ {images/} }
 
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 
 \usetikzlibrary{arrows}
 
@@ -50,7 +51,22 @@ CSC 565 - Graph Theory} %if necessary, replace with your course title
 
 
 \begin{question}{3}
-Show that if $\chi(G) = k$ then $\chi(\bar{G}) \geq \ceil[big]{n/k}.$ For every pair $n, k$ with $n \geq k \geq 1$, find a graph $G$ with $ν(G) = n, \chi(G) = k$, and $\chi(\bar{G}) = \ceil[big]{n/k}$.
+Show that if $\chi(G) = k$ then $\chi(\bar{G}) \geq \ceil[big]{n/k}.$ For every pair $n, k$ with $n \geq k \geq 1$, find a graph $G$ with $ν(G) = n, \chi(G) = k$, and $\chi(\bar{G}) = \ceil[big]{n/k}$.\\
+\\
+Let $G$ have a coloring $c$ and $\bar{G}$ have a coloring $c'$\\
+The graph $H$ formed by combining $G$ and $\bar(G)$ would then be $K_n$, with $\chi(H)$ = $n$.
+\\
+Every pair of vertices in $H$ would be adjacent and disjoint in exactly one of $G$ and $\bar{G}$ and therefore every vertex would have a tuple of the form $(c, c')$, with $K_n$ needing at most $size(c) * size(c')$ colours, which would be at least $n$ (since $\chi(H)$ = $n$).\\
+In other words,\\
+\indent $\chi(G) * \chi(\bar{G}) \geq n$\\
+i.e.	$k * \chi(\bar{G}) \geq n$\\
+i.e.	$\chi(\bar{G}) \geq \ceil[big]{n/k}$\\
+\\
+For every pair $n, k$ with $n \geq k \geq 1$, graph $G$ with $ν(G) = n, \chi(G) = k$, and $\chi(\bar{G}) = \ceil[big]{n/k}$ would consist of the following disjoint components:\\
+\indent $\floor{n/k}$ cliques of size $k$\\
+\indent 1 clique of all the remaining vertices\\
+This would ensure that for each clique, all vertices would share the same colour in the complement graph, and therefore $\floor{n/k}$ ($+1$, if $n$ is not exactly divisible by $k$) $= \ceil[big]{n/k}$ colours would be needed, ensuring that $\chi(\bar{G}) = \ceil[big]{n/k}$.
+
 \end{question}
 
 \begin{question}{4}
