@@ -70,7 +70,20 @@ This would ensure that for each clique, all vertices would share the same colour
 \end{question}
 
 \begin{question}{4}
-Prove that $\chi(\bar{H}) = \omega(\bar{H})$ when $H$ is bipartite and has no isolated vertices. (Hint: Phrase the conclusion in terms of H and apply results about bipartite graphs.)
+Prove that $\chi(\bar{H}) = \omega(\bar{H})$ when $H$ is bipartite and has no isolated vertices. (Hint: Phrase the conclusion in terms of H and apply results about bipartite graphs.)\\
+
+Let $X$ and $Y$ be bipartitions of $H$ and let $|X| \geq |Y| $
+
+By Proposition 5.1.7: For every graph $H$, $\chi(H)\geq\omega(H)$. To prove that $\chi(H)= \omega(H)$ we need to demonstrate a method to color $\bar{H}$ using only $\omega(\bar{H})$ colors.\\
+
+Since cliques in $\bar{H}$ are independent sets in $H$, this is the same as coloring $\bar{H}$ with $\omega(\bar{H}) =  \alpha(H)$ colors.\\ 
+
+We know that $\alpha(H) = \beta'(H)$ for a bipartite with no isolated vertices\\
+
+We also know that $\alpha'(H) + \beta'(H) = n(H)$, which can be combined with the previous formula to give $\alpha(H) = n(H)-\alpha'(H)$. \\
+
+Let M be a maximum matching of $\bar{H}$, for every edge $uv$ in M with $u \epsilon X$ and $v \epsilon Y$, assign every $uv$ pair the same color (so ${uv}_1$ gets color 1, ${uv}_x$ gets color x). For every other vertex in $X$ and $Y$ assign a unique color. There are $n-2|M|$ vertices not in M, the number of colors used is $|M| + (n-2|M|) = n - \alpha'(H) = \omega(\bar{H})$ . Thus proving that the inverse of any bipartite graph with no isolated vertices (H) can be colored with $\omega(\bar{H})$ colors.
+
 \end{question}
 
 \begin{question}{5}
