@@ -90,7 +90,14 @@ Let M be a maximum matching of $\bar{H}$, for every edge $uv$ in M with $u \epsi
 (!) Prove that Brooks' Theorem is equivalent to the following statement: every $k-1$-regular $k$-critical graph is a complete graph or an odd cycle.\\
 
 Brooks' Theorem:
-If $G$ is a (simple) connected graph other than a clique or an odd cycle, then $\chi(G) = \Delta(G)$.
+If $G$ is a (simple) connected graph other than a clique or an odd cycle, then $\chi(G) = \Delta(G)$. \\
+
+Let the statement - every $k-1$-regular $k$-critical graph is a complete graph or an odd cycle be S. Let us assume that Brooks' theorem is true.
+Let G be a $k-1$ regular $k$ critical graph. Thus we have, $\Delta (G) = k-1$ and $\chi (G) = K$. According to Brook's theorem, $G$ must be a complete graph or an odd cycle, which is equivalent to $S$. Hence, $S$ follows. \\ \\
+Now we need to show that the vice versa is also true. \\ \\
+Conversely assume $S$ is true. Let $G$ be a connected graph with chromatic number $k$. To prove the Brooks' theorem, we must show that $\Delta(G) \geq k$ unless $G$ is a complete graph or odd cycle. For that, assume $H$ is the $k$-critical subgraph of $G$. It follows that $\delta (H) \geq k-1$. If $\Delta(G) < k$, then $k- 1 \leq \delta(H) \leq \Delta(H) \leq \Delta(G) < k$. This means that H must be $k-1$ regular. By $S$, $H$ is therefore a complete graph or an odd cycle. If $\Delta(G)  = k-1$, then no vertex of $H$ has an additional incident edge in $G$. Thus, $H$ is a component of $G$, so it is all of $G$ as $G$ is connected. If $\Delta (G) < \chi (G)$, then $G$ is a complete graph or odd cycle. This shows that $S$ implies Brooks' theorem.
+
+
 \end{question}
 
 
