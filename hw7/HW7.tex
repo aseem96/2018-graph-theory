@@ -52,7 +52,23 @@ CSC 565 - Graph Theory} %if necessary, replace with your course title
 
 
 \begin{question}{1} - \color{blue} ANSHUL \color{black}
-6.1.8  Prove that every simple planar graph has a vertex of degree at most 5.
+6.1.8  Prove that every simple planar graph has a vertex of degree at most 5.\\
+\\
+Proof by contradiction:\\
+Let us assume that there exists a simple, planar graph $G$ with no vertex of degree $\leq 5$.\\
+The simplest case would be that $\delta(G) = 6$\\
+According to Theorem <>:\\
+\begin{equation}
+e \leq 3n - 6
+\end{equation}
+Also, since $\delta(G) = 6$, we have:\\
+\begin{equation}
+e \geq 6n
+\end{equation}
+From (1) and (2):\\\indent$6n \leq 3n - 6$\\
+Therefore\\\indent$n \leq -2$\\
+Since a graph needs a non-negative number of vertices, this is a contradiction.\\
+Hence, our assumption is false.
 \end{question}
 
 \begin{question}{2} - \color{blue}BIHAN\color{black} - 
