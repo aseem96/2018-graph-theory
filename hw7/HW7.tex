@@ -9,7 +9,6 @@
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{tikz}
 \usepackage{mathtools}
-\usepackage{multirow}
 \usepackage{enumitem}
 
 \usepackage{graphicx}
@@ -72,12 +71,32 @@ For any $\delta(G) > 6$, such an inequality would have a solution wherein  $n < 
 Hence, our assumption is false.
 \end{question}
 
-\begin{question}{2} - \color{blue}BIHAN\color{black} - 
+\begin{question}{2} - 
 6.1.27  Let $G$ be a connected 3-regular plane graph in which every vertex lies on one face of length 4, one face of length 6, and one face of length 8.
 \begin{enumerate}[label=\alph*)]
   \item In terms of $n(G)$, determine the number of faces of each length.
   \item Use Euler's Formula and part (a) to determine the number of faces of $G$.
 \end{enumerate}
+
+a.) Let $n$ be the number of vertices in $G$, let $e$ be the number of edges in $G$, and let $f$ be the number of faces of $G$.  \\
+Every vertex lies on a face of length 4, so the number of length 4 faces must be $n/4$. \\
+Every vertex lies on a face of length 6, so the number of length 6 faces must be $n/6$. \\
+Every vertex lies on a face of length 8, so the number of length 8 faces must be $n/8$. \\
+
+b.) 
+The total number of faces is: $f = n/4 + n/6 + n/8$ \\
+Since the graph is planar, Euler's equation applies: $ n-e+f=2$ \\
+The graph is also 3 regular, so we know: $2e = 3n $ \\
+
+\begin{equation}
+\begin{split}
+n-e+f & = 2  \\
+n - (3n/2) + n/4 +n/6 +n/8 & = 2 \\
+n & = 48
+\end{split}
+\end{equation}
+
+
 \end{question}
 
 \begin{question}{3} \color{blue} ASEEM \color{black}
@@ -142,11 +161,38 @@ Therefore our assumption is wrong and $G^{c}$ must be non planar. \\
 \end{align*}
 \end{question}
 
-\begin{question}{4} - \color{blue}BIHAN\color{black} - 
+\begin{question}{4} -  
 6.2.1  Prove that the complement of the 3-dimensional cube $Q_3$ is nonplanar.
 \end{question}
-\large\color{red}TEAMMATES, PLEASE MAKE SURE THAT THIS PETERSEN GRAPH AND $K{3,3}$ ARE THE BEST EXAMPLES, THANKS!
-\color{black}\ \normalsize
+$\bar{Q_3}$ contains a subdivision of $K_5$, and therefore cannot be planar according to Kuratowski's Theorem. $ACEGF$ forms a subdivision of $K_5$ like so:
+
+\begin{tikzpicture}
+\node[shape=circle,draw=red] (A) at (0,3) {A};
+\node[shape=circle,draw=black] (B) at (2,3) {B};
+\node[shape=circle,draw=red] (C) at (-1,2) {C};
+\node[shape=circle,draw=black] (D) at (3,2) {D};
+\node[shape=circle,draw=red] (E) at (-1,1) {E};
+\node[shape=circle,draw=red] (F) at (3,1) {F};
+\node[shape=circle,draw=red] (G) at (0,0) {G};
+\node[shape=circle,draw=black] (H) at (2,0) {H};
+\path [ultra thick] (A) edge node[left] {} (C);
+\path [ultra thick] (A) edge node[left] {} (E);
+\path [ultra thick] (A) edge node[left] {} (G);
+\path [ultra thick] (C) edge node[left] {} (E);
+\path [ultra thick] (C) edge node[left] {} (G);
+\path [ultra thick] (E) edge node[left] {} (G);
+\path [] (B) edge node[left] {} (D);
+\path [ultra thick] (B) edge node[left] {} (F);
+\path [] (B) edge node[left] {} (H);
+\path [ultra thick] (D) edge node[left] {} (F);
+\path [] (D) edge node[left] {} (H);
+\path [ultra thick] (F) edge node[left] {} (H);
+\path [ultra thick] (A) edge node[left] {} (B);
+\path [ultra thick] (C) edge node[left] {} (D);
+\path [ultra thick] (E) edge node[left] {} (F);
+\path [ultra thick] (G) edge node[left] {} (H);
+\end{tikzpicture}
+
 \begin{question}{5}  - \color{blue}DUSTIN\color{black} - 
 6.2.2 (a,b) Give two proofs that the Petersen graph is nonplanar.
 \begin{enumerate}[label=\alph*)]
