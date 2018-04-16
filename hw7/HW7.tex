@@ -81,7 +81,11 @@ Hence, our assumption is false.
 
 \begin{question}{3} \color{blue} ASEEM \color{black}
  6.1.29  Prove that the complement of a simple planar graph with at least 11 vertices is nonplanar.  Construct a self-complementary simple planar graph with 8 vertices. \\
-\\ //TODO \\
+\\ Let G be a simple planar graph with n = 11 vertices. Since G is planar, the number of edges $m(G) \leq 3n - 6 = 27$. \\
+Let us assume that $G^{c}$ is also planar. Then, $m(G^{c}) \leq 3n - 6 = 27$. 
+\\Therefore, $m(G) + m(G^{c}) = 27 + 27 = 54$.\\
+But since $G$ and $G^{c}$ are complementary, $m(G) + m(G^{c}) = m(K_{11}) = \frac{n(n-1)}{2} = 55$, which is a contradiction.
+Therefore our assumption is wrong and $G^{c}$ must be non planar. \\
 \\ A self complementary planar graph G with 3 vertices and its complement is shown below.
 \begin{align*}
 \begin{tikzpicture}
