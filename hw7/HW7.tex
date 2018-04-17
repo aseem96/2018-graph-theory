@@ -52,13 +52,13 @@ CSC 565 - Graph Theory} %if necessary, replace with your course title
 \maketitle
 
 
-\begin{question}{1} - \color{blue} ANSHUL \color{black}
-6.1.8  Prove that every simple planar graph has a vertex of degree at most 5.\\
+\begin{question}{1} 
+6.1.8: Prove that every simple planar graph has a vertex of degree at most 5.\\
 \\
 Proof by contradiction:\\
 Let us assume that there exists a simple, planar graph $G$ with no vertex of degree $\leq 5$.\\
 The simplest case would be that $\delta(G) = 6$\\
-According to Theorem <>:\\
+According to the theorem discussed in class:\\
 \begin{equation}
 e \leq 3n - 6
 \end{equation}
@@ -72,8 +72,8 @@ For any $\delta(G) > 6$, such an inequality would have a solution wherein  $n < 
 Hence, our assumption is false.
 \end{question}
 
-\begin{question}{2} - 
-6.1.27  Let $G$ be a connected 3-regular plane graph in which every vertex lies on one face of length 4, one face of length 6, and one face of length 8.
+\begin{question}{2} 
+6.1.27: Let $G$ be a connected 3-regular plane graph in which every vertex lies on one face of length 4, one face of length 6, and one face of length 8.
 \begin{enumerate}[label=\alph*)]
   \item In terms of $n(G)$, determine the number of faces of each length.
   \item Use Euler's Formula and part (a) to determine the number of faces of $G$.
@@ -100,8 +100,8 @@ n & = 48
 
 \end{question}
 
-\begin{question}{3} \color{blue} ASEEM \color{black}
- 6.1.29  Prove that the complement of a simple planar graph with at least 11 vertices is nonplanar.  Construct a self-complementary simple planar graph with 8 vertices. \\
+\begin{question}{3} 
+6.1.29:  Prove that the complement of a simple planar graph with at least 11 vertices is nonplanar.  Construct a self-complementary simple planar graph with 8 vertices. \\
 \\ Let G be a simple planar graph with n = 11 vertices. Since G is planar, the number of edges $m(G) \leq 3n - 6 = 27$. \\
 Let us assume that $G^{c}$ is also planar. Then, $m(G^{c}) \leq 3n - 6 = 27$. 
 \\Therefore, $m(G) + m(G^{c}) = 27 + 27 = 54$.\\
@@ -162,8 +162,8 @@ Therefore our assumption is wrong and $G^{c}$ must be non planar. \\
 \end{align*}
 \end{question}
 
-\begin{question}{4} -  
-6.2.1  Prove that the complement of the 3-dimensional cube $Q_3$ is nonplanar.
+\begin{question}{4} 
+6.2.1:  Prove that the complement of the 3-dimensional cube $Q_3$ is nonplanar.
 \end{question}
 $\bar{Q_3}$ contains a subdivision of $K_5$, and therefore cannot be planar according to Kuratowski's Theorem. $ACEGF$ forms a subdivision of $K_5$ like so:
 
@@ -194,8 +194,8 @@ $\bar{Q_3}$ contains a subdivision of $K_5$, and therefore cannot be planar acco
 \path [ultra thick] (G) edge node[left] {} (H);
 \end{tikzpicture}
 
-\begin{question}{5}  - \color{blue}DUSTIN\color{black} - 
-6.2.2 (a,b) Give two proofs that the Petersen graph is nonplanar.
+\begin{question}{5} 
+6.2.2: (a,b) Give two proofs that the Petersen graph is nonplanar.
 \begin{enumerate}[label=\alph*)]
   \item Using Kuratowski's Theorem.   \\
   Kuratowski's theorem states that any simple graph is planar if and only if it does not contain a subdivision of $K_5$ or $K_{3,3}$.
