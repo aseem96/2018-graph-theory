@@ -194,7 +194,7 @@ $\bar{Q_3}$ contains a subdivision of $K_5$, and therefore cannot be planar acco
 \path [ultra thick] (G) edge node[left] {} (H);
 \end{tikzpicture}
 
-\begin{question}{5}  - \color{blue}DUSTIN\color{black} - 
+\begin{question}{5} 
 6.2.2 (a,b) Give two proofs that the Petersen graph is nonplanar.
 \begin{enumerate}[label=\alph*)]
   \item Using Kuratowski's Theorem.   \\
@@ -208,15 +208,21 @@ $\bar{Q_3}$ contains a subdivision of $K_5$, and therefore cannot be planar acco
   \end{center}
   As such, the Petersen graph contains a subdivision of $K_{3,3}$ proving that the Petersen graph is nonplanar.
 
-  \item Using Euler's Formula and the fact that the Petersen graph has girth 5.\\
-  Euler's formula states that in any given planar graph, $n-e+f=2$ \\
-  \begin{tabular}{|l|} \hline \\
-  Known quantities for the petersen graph \\ \hline
-  number of vertices, $n$: 10  \\ \hline
-  number of edges, $e$: 15  \\ \hline
-  3-connected, therefore $2e = 3n$ \\ \hline
-  $2e = \sum $ degree of faces = $5f$ \\ \hline
-\end{tabular}
+  \item Using Euler's Formula and the fact that the Petersen graph has girth 5.
+   \begin{center}  
+   \end{center}
+  Euler's formula states that in any given planar graph, $n-e+f=2$ 
+   \begin{center}  
+     \begin{tabular}{|l|} \hline \\
+  	Known quantities for the petersen graph \\ \hline
+  	number of vertices, $n$: 10  \\ \hline
+  	number of edges, $e$: 15  \\ \hline
+  	number of faces, $f$: unknown \\ \hline
+  	3-connected, therefore $2e = 3n$ \\ \hline
+  	$2e = \sum $ degree of faces = $5f$ \\ \hline
+      \end{tabular}
+  \end{center}
+
 
 Let us assume that the Petersen graph is planar.  Using Euler's formula, we determine that the number of faces in the planar Petersen graph is: \\
 $10 - 15 + f = 2$, or $f =7$. \\
